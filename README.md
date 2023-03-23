@@ -15,12 +15,12 @@ _Primero, nos asegurarnos que tenemos Python 3 correctamente instalado (chequeo 
 
 	$ python3 -V
 	
-	_En caso de no tener la versión 3 de Python, correr los siguientes comandos:_
+	En caso de no tener la versión 3 de Python, correr los siguientes comandos:
 
 	$ sudo apt-get update
 	$ sudo apt-get -y upgrade
 	
-	_Además, es recomendado tener instalado *pip* para manejar los paquetes:_
+	Además, es recomendado tener instalado *pip* para manejar los paquetes:
 
 	$ sudo apt-get install -y python3-pip
 	
