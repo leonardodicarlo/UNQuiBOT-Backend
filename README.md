@@ -9,7 +9,7 @@
 
 ### Deploy 🔧
 
-_Para correr el software localmente debemos tener instalado tanto Python 3, como las librerías PyTorch y nltk.
+_Para correr el software localmente debemos tener instalado tanto Python 3, como las librerías PyTorch y nltk._
 
 _Primero, nos asegurarnos que tenemos Python 3 correctamente instalado (chequeo a través del Terminal):_
 
