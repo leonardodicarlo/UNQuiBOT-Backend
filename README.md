@@ -38,7 +38,7 @@ _Tercero, se debe instalar la librería nltk, que es la que procesará el lengua
 	```
 	$ pip3 install nltk
 	```
-_Por último, se debe correr el archivo *train.py* al menos una vez, ya que este generará el archivo *data.pth*:
+_Por último, se debe correr el archivo *train.py* al menos una vez, ya que este generará el archivo *data.pth*:_
 
 	```
 	$ python3 train.py
