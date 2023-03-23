@@ -1,0 +1,70 @@
+{
+    "intents": [
+      {
+        "tag": "bienvenida",
+        "patterns": [
+          "Hola",
+          "Hola!",
+          "Buenas",
+          "Buenas, como va?",
+          "¿Cómo estás?",
+          "Buen día"
+        ],
+        "responses": [
+          "Hola! :)",
+          "Hola, ¿en qué te puedo ayudar?",
+          "Buenas! ¿Qué puedo hacer por vos?",
+          "¿Cómo estás?¿En qué te ayudo?"
+        ]
+      },
+      {
+        "tag": "despedida",
+        "patterns": ["Chau", "Hasta Luego", "Chau, gracias", "Finalizar"],
+        "responses": [
+          "Chau, gracias por tu visita!",
+          "Hasta luego!",
+          "Chau, gracias!"
+        ]
+      },
+      {
+        "tag": "agradecimiento",
+        "patterns": ["Gracias", "Encontré lo que buscaba", "Listo", "Genial"],
+        "responses": ["Me alegra ayudarte!", "Perfecto, un placer", "Estoy a la orden!"]
+      },
+      {
+        "tag": "aulas",
+        "patterns": [
+          "¿Dónde quedan las aulas?",
+          "¿En qué aula curso?",
+          "¿Cómo llego al aula?"
+        ],
+        "responses": [
+          "Aquí están las aulas para este cuatrimestre: https://docs.google.com/spreadsheets/d/1dfhnJ2AH-tObDMXkmfNHLEfx7FnxGfE9/view#gid=1270991353",
+          "Este link del blog puede ayudarte http://cpi.blog.unq.edu.ar/aulas/"
+        ]
+      },
+      {
+        "tag": "inscripciones",
+        "patterns": [
+          "¿Cuando empieza la fecha de inscripciones?",
+          "¿En qué fecha puedo inscribirme?",
+          "¿Cuando puedo anotarme?",
+          "¿Ya pasó la fecha de inscripción?"
+        ],
+        "responses": [
+          "En esta sección de nuestra web vas a encontrar las fechas que buscás: http://www.unq.edu.ar/secciones/524-calendario-acad%C3%A9mico-2023/"
+        ]
+      },
+      {
+        "tag": "carreras",
+        "patterns": [
+          "¿Qué carreras hay disponibles?",
+          "¿A qué carrera me puedo anotar?",
+          "Quiero buscar una carrera"
+        ],
+        "responses": [
+          "Estas son las carreras disponibles en el departamento de CyT (Ciencia y Tecnología) http://www.unq.edu.ar/buscador_carreras.php?id_carrera=&id_titulo=0&id_modalidad=0&id_nivel=912&id_departamento=15&p=1"
+        ]
+      }
+    ]
+  }
