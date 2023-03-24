@@ -1,5 +1,7 @@
 # Trabajo de Inserción Profesional - UNQuiBOT (Backend) - 1° Cuatrimestre 2023
 
+<img width="100" alt="Logo UNQuiBOT" src="https://user-images.githubusercontent.com/33500215/227559578-94249582-061f-4523-ad1c-a90873906388.png">
+
 ## Autores ✒️
 
 * **Leonardo Di Carlo** - [leonardodicarlo](https://github.com/leonardodicarlo)
