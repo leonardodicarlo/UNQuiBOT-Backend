@@ -11,7 +11,7 @@
 
 ### Deploy 🔧
 
-_Para correr el software localmente debemos tener instalado tanto Python 3, como las librerías PyTorch y nltk._
+_Para correr el software localmente debemos tener instalado tanto Python 3 como Flask y las librerías PyTorch y nltk._
 
 _Primero, nos asegurarnos que tenemos Python 3 correctamente instalado (chequeo a través del Terminal):_
 
@@ -35,6 +35,11 @@ _Segundo, instalar la librería PyTorch, que es la que generará y entranará nu
 _Tercero, se debe instalar la librería nltk, que es la que procesará el lenguaje con el que se interactue:_
 
 	$ pip3 install nltk
+	
+_Cuarto, se debe instalar Flask, lo cual levantará en http://127.0.0.1:5000/predict una aplicación en escucha:_
+
+	$ pip3 install Flask
+	$ pip3 install flask-cors
 	
 _Por último, se debe correr el archivo *train.py* al menos una vez, ya que este generará el archivo *data.pth*:_
 
