@@ -25,13 +25,9 @@ model.load_state_dict(model_state)
 model.eval()
 
 bot_name = "UNQuiBOT"
-print("Hablemos! (escribí 'salir' para finalizar)")
-while True:
-    sentence = input("Vos: ")
-    if sentence == "salir":
-        break
 
-    sentence = tokenize(sentence)
+def get_response(msg):
+    sentence = tokenize(msg)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X).to(device)
@@ -46,6 +42,17 @@ while True:
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
-    else:
-        print(f"{bot_name}: No te entendí...")
+                return random.choice(intent['responses'])
+    
+    return "No te entendí..."
+
+
+if __name__ == "__main__":
+    print("Hablemos! (escribí 'salir' para finalizar)")
+    while True:
+        sentence = input("Vos: ")
+        if sentence == "salir":
+            break
+
+        resp = get_response(sentence)
+        print(resp)
