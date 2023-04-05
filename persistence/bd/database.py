@@ -4,10 +4,6 @@ import sys
 
 #print(sys.argv[1])
 
-#if not os.getenv("DATABASE_URL") | (not os.getenv("DATABASE_NAME")) \
-#       | (not os.getenv("DATABASE_USER")) | (not os.getenv("DATABASE_PASS")):
-#    raise RuntimeError("DATABASE_URL is not set")
-
 class DataBase:
     def __init__(self):
         self._connection = pymysql.connect(

@@ -1,4 +1,4 @@
-class Alumno:
+class Usuario:
     def __init__(self, id, legajo, dni):
         self._id = id
         self._legajo = legajo
