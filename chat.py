@@ -5,12 +5,14 @@ import torch
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
+from persistence.carreraDAO import CarrerasDAO
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intents.json', 'r') as json_data:
+with open('./intents.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "data.pth"
+FILE = "./data.pth"
 data = torch.load(FILE)
 
 input_size = data["input_size"]
@@ -39,12 +41,29 @@ def get_response(msg):
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    if prob.item() > 0.75:
+    if prob.item() > 0.55:
         for intent in intents['intents']:
             if tag == intent["tag"]:
+                if "info materias - " in tag :
+                    return infoMateriasPorCarrera(intent["value"])
+                if "cantidad materias - " in tag :
+                    return cantidadMateriasPorCarrera(intent["value"])
                 return random.choice(intent['responses'])
-    
     return "No te entendí..."
+
+# ---------------------- #
+carrerasDAO = CarrerasDAO()
+def infoMateriasPorCarrera(id):
+    carrera = carrerasDAO.findCarreraById(id)
+    infoCarrera= "Las materias de la carrera " + carrera.nombre + " son: " \
+           + carrera.infoMaterias()
+    return infoCarrera
+
+def cantidadMateriasPorCarrera(id):
+    carrera = carrerasDAO.findCarreraById(id)
+    cantidadMaterias= "La carrera " + carrera.nombre + " tiene: " \
+           + str(len(carrera.materias)) + " materias."
+    return cantidadMaterias
 
 
 if __name__ == "__main__":

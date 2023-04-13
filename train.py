@@ -9,7 +9,7 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
-with open('intents.json', 'r') as f:
+with open('./intents.json', 'r') as f:
     intents = json.load(f)
 
 all_words = []
@@ -91,7 +91,7 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-# Train the model
+# Train the models
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)

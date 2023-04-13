@@ -2,9 +2,12 @@ import pymysql
 import os
 import sys
 
+from pymysql.cursors import DictCursor
+
+
 #print(sys.argv[1])
 
-class DataBase:
+class Database:
     def __init__(self):
         self._connection = pymysql.connect(
             host='localhost',
@@ -12,7 +15,7 @@ class DataBase:
             password='rootPass',
             db='cpi_unqbot'
         )
-        self._cursor = self._connection.cursor()
+        self._cursor = self._connection.cursor(DictCursor)
 
     def execute_query(self, sqlString):
         self._cursor.execute(query=sqlString)

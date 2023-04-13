@@ -1,9 +1,9 @@
-from bd.database import DataBase
+from bd.database import Database
 
 
-class AlumnoDAO:
+class UsuarioDAO:
     def __init__(self):
-        self._db = DataBase()
+        self._db = Database()
 
     def getAll(self):
         return self._db.execute_query("Select * from usuario")

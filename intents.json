@@ -65,6 +65,54 @@
         "responses": [
           "Estas son las carreras disponibles en el departamento de CyT (Ciencia y Tecnología) http://www.unq.edu.ar/buscador_carreras.php?id_carrera=&id_titulo=0&id_modalidad=0&id_nivel=912&id_departamento=15&p=1"
         ]
+      },
+      {
+        "tag": "info materias - TPI",
+        "patterns": [
+          "¿Qué materias tiene la Tecnicatura en programación informática?", "¿Qué materias tiene la TPI?"
+        ],
+        "value": 1,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - TPI",
+        "patterns": [
+          "¿Cuántas son las materias de la Tecnicatura en programación?", "¿Cuántas materias tiene la TPI?"
+        ],
+        "value": 1,
+        "responses": [""]
+      },
+            {
+        "tag": "cantidad materias - LI",
+        "patterns": [
+          "¿Cuántas materias tiene la Licenciatura en Informática?", "¿Cuántas materias tiene la LI?"
+        ],
+        "value": 2,
+        "responses": [""]
+      },
+            {
+        "tag": "info aterias - LI",
+        "patterns": [
+          "Qué materias tiene la Licenciatura en Informática?", "¿Qué materias tiene la LI?"
+        ],
+        "value": 2,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - T.Biotecnologia",
+        "patterns": [
+          "Cuáles son las materias de la Tecnicatura en Biotecnología?"
+        ],
+        "value": 3,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - T.Biotecnologia",
+        "patterns": [
+          "Cuántas materias hay en la Tecnicatura en Biotecnología?"
+        ],
+        "value": 3,
+        "responses": [""]
       }
     ]
   }
