@@ -31,7 +31,6 @@ CREATE TABLE `usuario_mcursadas` (
 DROP TABLE IF EXISTS `carrera`;
 CREATE TABLE `carrera` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `codigo` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `nombre` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   `depto` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
