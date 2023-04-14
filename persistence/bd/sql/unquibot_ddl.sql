@@ -35,7 +35,7 @@ CREATE TABLE `carrera` (
   `depto` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_carrera_nombre` (`nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 
 
@@ -43,7 +43,8 @@ CREATE TABLE `carrera` (
 DROP TABLE IF EXISTS `carrera_materias`;
 CREATE TABLE `carrera_materias` (
   `idCarrera` int NOT NULL,
-  `idMateria` int NOT NULL
+  `idMateria` int NOT NULL,
+  PRIMARY KEY (`idCarrera`,`idMateria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -67,7 +68,6 @@ CREATE TABLE `cursada` (
 DROP TABLE IF EXISTS `materia`;
 CREATE TABLE `materia` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `codigo` varchar(12) COLLATE latin1_spanish_ci DEFAULT NULL,
   `nombre` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_materia_nombre` (`nombre`)

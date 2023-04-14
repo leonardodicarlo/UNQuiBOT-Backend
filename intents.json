@@ -69,7 +69,8 @@
       {
         "tag": "info materias - TPI",
         "patterns": [
-          "¿Qué materias tiene la Tecnicatura en programación informática?", "¿Qué materias tiene la TPI?"
+          "Qué materias tiene la Tecnicatura en programación informática?", "Qué materias tiene la TPI?",
+          "Que materias tiene la Tecnicatura en programacion informatica?", "Que materias tiene la TPI?"
         ],
         "value": 1,
         "responses": [""]
@@ -77,7 +78,8 @@
       {
         "tag": "cantidad materias - TPI",
         "patterns": [
-          "¿Cuántas son las materias de la Tecnicatura en programación?", "¿Cuántas materias tiene la TPI?"
+          "Cuántas son las materias de la Tecnicatura en programación?", "Cuántas materias tiene la TPI?",
+          "Cuantas son las materias de la Tecnicatura en programacion?", "Cuantas materias tiene la TPI?"
         ],
         "value": 1,
         "responses": [""]
@@ -85,15 +87,17 @@
             {
         "tag": "cantidad materias - LI",
         "patterns": [
-          "¿Cuántas materias tiene la Licenciatura en Informática?", "¿Cuántas materias tiene la LI?"
+          "Cuántas materias tiene la Licenciatura en Informática?", "Cuántas materias tiene la LI?",
+          "Cuantas materias tiene la Licenciatura en Informatica?", "Cuantas materias tiene la LI?"
         ],
         "value": 2,
         "responses": [""]
       },
             {
-        "tag": "info aterias - LI",
+        "tag": "info materias - LI",
         "patterns": [
-          "Qué materias tiene la Licenciatura en Informática?", "¿Qué materias tiene la LI?"
+          "Qué materias tiene la Licenciatura en Informática?", "Qué materias tiene la LI?",
+          "Que materias tiene la Licenciatura en Informatica?", "Que materias tiene la LI?"
         ],
         "value": 2,
         "responses": [""]
@@ -101,7 +105,9 @@
       {
         "tag": "info materias - T.Biotecnologia",
         "patterns": [
-          "Cuáles son las materias de la Tecnicatura en Biotecnología?"
+          "Cuáles son las materias de la Tecnicatura en Biotecnología?",
+          "Cuales son las materias de la Tecnicatura en Biotecnología?",
+          "Materias de la Tecnicatura en Biotecnologia"
         ],
         "value": 3,
         "responses": [""]
@@ -109,7 +115,8 @@
       {
         "tag": "cantidad materias - T.Biotecnologia",
         "patterns": [
-          "Cuántas materias hay en la Tecnicatura en Biotecnología?"
+          "Cuántas materias hay en la Tecnicatura en Biotecnología?",
+          "Cuantas materias hay en la Tecnicatura en Biotecnologia?"
         ],
         "value": 3,
         "responses": [""]

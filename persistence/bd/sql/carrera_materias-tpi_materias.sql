@@ -35,4 +35,43 @@ INSERT INTO cpi_unqbot.carrera_materias (idCarrera,idMateria) VALUES
 	 (2,13),
 	 (2,14),
 	 (2,15),
-	 (2,17);
+	 (2,17),
+	 (2,19),
+	 (2,20),
+	 (2,21),
+	 (2,22),
+	 (2,23),
+	 (2,24);
+INSERT INTO cpi_unqbot.carrera_materias (idCarrera,idMateria) VALUES
+	 (2,25),
+	 (2,26),
+	 (2,27),
+	 (2,28),
+	 (2,29),
+	 (2,30),
+	 (2,31),
+	 (2,32),
+	 (2,33),
+	 (2,34);
+INSERT INTO cpi_unqbot.carrera_materias (idCarrera,idMateria) VALUES
+	 (2,35),
+	 (2,36),
+	 (2,37),
+	 (3,38),
+	 (3,40),
+	 (3,41),
+	 (3,42),
+	 (3,43),
+	 (3,44),
+	 (3,45);
+INSERT INTO cpi_unqbot.carrera_materias (idCarrera,idMateria) VALUES
+	 (3,46),
+	 (3,48),
+	 (3,49),
+	 (3,50),
+	 (3,51),
+	 (3,52),
+	 (3,53),
+	 (3,54),
+	 (3,55),
+	 (3,56);

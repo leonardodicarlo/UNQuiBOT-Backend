@@ -61,8 +61,8 @@ def infoMateriasPorCarrera(id):
 
 def cantidadMateriasPorCarrera(id):
     carrera = carrerasDAO.findCarreraById(id)
-    cantidadMaterias= "La carrera " + carrera.nombre + " tiene: " \
-           + str(len(carrera.materias)) + " materias."
+    cantidadMaterias= "La carrera " + carrera.nombre + " tiene " \
+           + str(len(carrera.materias)) + " materias"
     return cantidadMaterias
 
 
