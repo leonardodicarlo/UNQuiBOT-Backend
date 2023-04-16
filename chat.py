@@ -44,7 +44,7 @@ def get_response(msg):
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
     
-    return "No te entendí..."
+    return "No te entendí, todavía estoy aprendiendo.."
 
 
 if __name__ == "__main__":

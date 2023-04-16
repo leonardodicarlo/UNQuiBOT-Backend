@@ -5,10 +5,13 @@
         "patterns": [
           "Hola",
           "Hola!",
+          "Holis",
           "Buenas",
           "Buenas, como va?",
           "¿Cómo estás?",
-          "Buen día"
+          "Buen día",
+          "Buenas tardes",
+          "Buenas noches"
         ],
         "responses": [
           "Hola! :)",
@@ -19,7 +22,7 @@
       },
       {
         "tag": "despedida",
-        "patterns": ["Chau", "Hasta Luego", "Chau, gracias", "Finalizar"],
+        "patterns": ["Chau", "Hasta Luego", "Chau, gracias", "Finalizar", "Terminé"],
         "responses": [
           "Chau, gracias por tu visita!",
           "Hasta luego!",
@@ -28,42 +31,145 @@
       },
       {
         "tag": "agradecimiento",
-        "patterns": ["Gracias", "Encontré lo que buscaba", "Listo", "Genial"],
+        "patterns": ["Gracias", "Encontré lo que buscaba", "Listo", "Genial", "Listo, gracias."],
         "responses": ["Me alegra ayudarte!", "Perfecto, un placer", "Estoy a la orden!"]
       },
       {
         "tag": "aulas",
         "patterns": [
-          "¿Dónde quedan las aulas?",
-          "¿En qué aula curso?",
-          "¿Cómo llego al aula?"
+          "Dónde quedan las aulas?",
+          "En qué aula curso?",
+          "Cómo llego al aula?",
+          "Cuál es mi aula?",
+          "Donde están las aulas?",
+          "Necesito información sobre aulas"
         ],
         "responses": [
-          "Aquí están las aulas para este cuatrimestre: https://docs.google.com/spreadsheets/d/1dfhnJ2AH-tObDMXkmfNHLEfx7FnxGfE9/view#gid=1270991353",
+          "Aquí están las aulas para este cuatrimestre: http://cpi.blog.unq.edu.ar/aulas/",
           "Este link del blog puede ayudarte http://cpi.blog.unq.edu.ar/aulas/"
         ]
       },
       {
         "tag": "inscripciones",
         "patterns": [
-          "¿Cuando empieza la fecha de inscripciones?",
-          "¿En qué fecha puedo inscribirme?",
-          "¿Cuando puedo anotarme?",
-          "¿Ya pasó la fecha de inscripción?"
+          "Cuando empieza la fecha de inscripciones?",
+          "En qué fecha puedo inscribirme?",
+          "Cuando puedo anotarme?",
+          "Cuando me puedo anotar?",
+          "Cuando me puedo inscribr?",
+          "Ya pasó la fecha de inscripción?",
+          "Me quiero inscribir",
+          "Todavía me puedo inscribir?",
+          "Cuándo es la próxima fecha de inscripciones?"
         ],
         "responses": [
-          "En esta sección de nuestra web vas a encontrar las fechas que buscás: http://www.unq.edu.ar/secciones/524-calendario-acad%C3%A9mico-2023/"
+          "En esta sección de nuestra web vas a encontrar las fechas que buscás: http://cpi.blog.unq.edu.ar/calendario-academico/",
+          "Desde este link vas a encontrar las fechas de inscripción: http://cpi.blog.unq.edu.ar/calendario-academico/"
         ]
       },
       {
         "tag": "carreras",
         "patterns": [
-          "¿Qué carreras hay disponibles?",
-          "¿A qué carrera me puedo anotar?",
-          "Quiero buscar una carrera"
+          "Qué carreras hay disponibles?",
+          "A qué carrera me puedo anotar?",
+          "Quiero buscar una carrera",
+          "Cuáles son las carreras en CyT?",
+          "Qué carreras tiene el departamento de CyT?"
         ],
         "responses": [
-          "Estas son las carreras disponibles en el departamento de CyT (Ciencia y Tecnología) http://www.unq.edu.ar/buscador_carreras.php?id_carrera=&id_titulo=0&id_modalidad=0&id_nivel=912&id_departamento=15&p=1"
+          "Estas son las carreras disponibles en CyT: <br /><br />-Arquitectura Naval <br />-Ingeniería en Alimentos <br />-Ingeniería en Automatización y Control Industrial <br />-Licenciatura en Bioinformática <br />-Licenciatura en Biotecnología <br />-Licenciatura en Informática <br />-Tecnicatura Universitaria en Biotecnología <br />-Tecnicatura Universitaria en Programación Informática <br />-Tecnicatura Universitaria en Química <br />-Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo <br />-Tecnicatura Universitaria en Tecnología Ambiental y Petroquímica <br /><br />Más información en el siguiente link: http://www.unq.edu.ar//buscador_carreras.php"
+        ]
+      },
+      {
+        "tag": "cant-materias-tpi",
+        "patterns": [
+          "Cuántas materias tiene la TPI?",
+          "Cuantas materias tiene la TPI?",
+          "Cuántas materias tiene la Tecnicatura en Programación?",
+          "Cuantas materias tiene la Tecnicatura en Programacion?",
+          "Qué cantidad de materias tiene la TPI?",
+          "Que cantidad de materias tiene la TPI?",
+          "Qué cantidad de materias tiene la Tecnicatura en Programación Informática?",
+          "Que cantidad de materias tiene la Tecnicatura en Programacion Informatica?"
+        ],
+        "responses": [
+          "La carrera Tecnicatura en Programación Informática tiene 18 materias",
+          "18 materias componen la Tecnicatura en Programación Informática"
+        ]
+      },
+      {
+        "tag": "cant-materias-tb",
+        "patterns": [
+          "Cuántas materias tiene la TB?",
+          "Cuantas materias tiene la TB?",
+          "Cuántas materias tiene la Tecnicatura en Biotecnología?",
+          "Cuantas materias tiene la Tecnicatura en Biotecnologia?",
+          "Qué cantidad de materias tiene la TB?",
+          "Que cantidad de materias tiene la TB?",
+          "Qué cantidad de materias tiene la Tecnicatura en Biotecnología?",
+          "Que cantidad de materias tiene la Tecnicatura en Biotecnologia?"
+        ],
+        "responses": [
+          "La carrera Tecnicatura en Biotecnología tiene 17 materias",
+          "17 materias componen la Tecnicatura en Biotecnología"
+        ]
+      },
+      {
+        "tag": "cant-materias-lic",
+        "patterns": [
+          "Cuántas materias tiene la Licenciatura en Informática?",
+          "Cuantas materias tiene la Licenciatura en Informatica?",
+          "Qué cantidad de materias tiene la Licenciatura en Informática?",
+          "Que cantidad de materias tiene la Licenciatura en Informatica?",
+          "Cuántas materias son la Licenciatura en Informatica?"
+        ],
+        "responses": [
+          "La carrera Licenciatura en Informática tiene 35 materias",
+          "35 materias componen Licenciatura en Informática"
+        ]
+      },
+      {
+        "tag": "materias-tip",
+        "patterns": [
+          "Qué materias tiene la TPI?",
+          "Que materias tiene la TPI?",
+          "Qué materias tiene la Tecnicatura en Programación Informática?",
+          "Que materias tiene la Tecnicatura en Programacion Informatica",
+          "Cuáles materias tiene la Tecnicatura en Programación Informática?",
+          "Cuales materias tiene la Tecnicatura en Programacion Informatica?",
+          "Cuáles materias tiene la TPI?",
+          "Cuales materias tiene la TPI?"
+        ],
+        "responses": [
+          "Las materias de la carrera Tecnicatura en Programación Informática son: <br /><br />-Introducción a la Programación <br />-Organización de Computadoras <br />-Matemática I <br />-Bases de datos <br />-Programación con Objetos <br />-Programación con Objetos II <br />-Estructuras de Datos <br />-Redes de Computadoras <br />-Sistemas Operativos <br />-Programación Concurrente <br />-Matemática II <br />-Elementos de Ingeniería de Software <br />-Construcción de Interfaces de Usuario <br />-Estrategias de Persistencia <br />-Programación Funcional <br />-Desarrollo de Aplicaciones <br />-Laboratorio de Sistemas Operativos y Redes <br />-Trabajo de Inserción Profesional"
+        ]
+      },
+      {
+        "tag": "materias-tb",
+        "patterns": [
+          "Qué materias tiene la TB?",
+          "Que materias tiene la TB?",
+          "Qué materias tiene la Tecnicatura en Biotecnología?",
+          "Que materias tiene la Tecnicatura en Biotecnologia",
+          "Cuáles materias tiene la Tecnicatura en Biotecnología?",
+          "Cuales materias tiene la Tecnicatura en Biotecnologia?",
+          "Cuáles materias tiene la TB?",
+          "Cuales materias tiene la TB?"
+        ],
+        "responses": [
+          "Las materias de la carrera Tecnicatura en Biotecnología son: <br /><br />-Inglés Básico <br />-Informática <br />-Técnicas Básicas de Laboratorio <br />-Matemática Aplicada <br />-Química General <br />-Química Orgánica <br />-Taller de Física Aplicada <br />-Fundamentos en Biología Celular y Molecular <br />-Biotecnología Clásica y Moderna <br />-Bioquímica <br />-Laboratorio de Química Instrumental <br />-Bases de la Microbiología Aplicada <br />-Técnicas Inmunológicas <br />-Estadística Aplicada <br />-Higiene y Seguridad Industrial <br />-Técnicas de Biología Molecular y Genética <br />-Producción por Fermentadores"
+        ]
+      },
+      {
+        "tag": "materias-lic",
+        "patterns": [
+          "Qué materias tiene la Licenciatura en Informática?",
+          "Que materias tiene la Licenciatura en Informatica?",
+          "Cuáles materias tiene la Licenciatura en Informática",
+          "Cuales materias tiene la Licenciatura en Informatica?"
+        ],
+        "responses": [
+          "Las materias de la carrera Licenciatura en Informática son: <br /><br />-Introducción a la Programación <br />-Organización de Computadoras <br />-Matemática I <br />-Bases de datos <br />-Programación con Objetos <br />-Programación con Objetos II <br />-Estructuras de Datos <br />-Redes de Computadoras <br />-Sistemas Operativos <br />-Programación Concurrente <br />-Matemática II <br />-Elementos de Ingeniería de Software <br />-Construcción de Interfaces de Usuario <br />-Estrategias de Persistencia <br />-Programación Funcional <br />-Laboratorio de Sistemas Operativos y Redes <br />-Algoritmos <br />-Análisis Matemático <br />-Lógica y Programación <br />-Seguridad de la Información <br />-Matemática III <br />-Ingeniería de Requerimientos <br />-Práctica del Desarrollo de Software <br />-Probabilidad y Estadística <br />-Gestión de Proyectos de Software <br />-Lenguajes Formales y Autómatas <br />-Programación con Objetos III <br />-Teoría de la Computación <br />-Arquitectura de Software I <br />-Sistemas Distribuidos <br />-Características de Lenguajes de Programación <br />-Arquitectura de Software II <br />-Arquitectura de Computadoras <br />-Parseo y generación de código <br />-Aspectos Legales y Sociales"
         ]
       }
     ]
