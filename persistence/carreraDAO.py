@@ -21,7 +21,7 @@ class CarrerasDAO:
         if materiasRes:
             carrera.materias = self.buildMaterias(list(materiasRes))
 
-        self._db.close()
+        ##self._db.close()
 
         return carrera
 

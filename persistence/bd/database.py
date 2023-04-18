@@ -22,4 +22,4 @@ class Database:
         return self._cursor.fetchall()
 
     def close(self):
-        self._connection.close();
+        self._connection.close()

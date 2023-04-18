@@ -49,7 +49,7 @@ def get_response(msg):
                 if "cantidad materias - " in tag :
                     return cantidadMateriasPorCarrera(intent["value"])
                 return random.choice(intent['responses'])
-    return "No te entendí..."
+    return "No te entendí, todavía estoy aprendiendo..."
 
 # ---------------------- #
 carrerasDAO = CarrerasDAO()
