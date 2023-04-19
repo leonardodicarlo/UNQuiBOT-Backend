@@ -61,7 +61,7 @@ CREATE TABLE `cursada` (
   `aulas` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_cursada_idMateria` (`idMateria`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 
 ---Table materia
@@ -77,10 +77,7 @@ CREATE TABLE `materia` (
 ---Table materias_correlativas
 DROP TABLE IF EXISTS `materias_correlativas`;
 CREATE TABLE `materias_correlativas` (
+  `idCarrera` int NOT NULL,
   `idMateria` int NOT NULL,
   `idCorrelativa` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-
-

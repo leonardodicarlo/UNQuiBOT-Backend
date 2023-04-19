@@ -7,7 +7,7 @@ INSERT INTO cpi_unqbot.materia (id,nombre) VALUES
 	(6,'Algoritmos'),
 	(7,'Algoritmos de Programación'),
 	(8,'Algoritmos en Bioinformática'),
-	(9,'Alistamiento I'),
+	(9,'Aislamiento I'),
 	(10,'Análisis en Variable Compleja'),
 	(11,'Análisis Estático de Programas y Herramientas Asociadas'),
 	(12,'Análisis General de Alimentos'),
