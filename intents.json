@@ -4,7 +4,9 @@
         "tag": "bienvenida",
         "patterns": [
           "Hola",
+          "Holis",
           "Hola!",
+          "Holis!",
           "Buenas",
           "Buenas, como va?",
           "¿Cómo estás?",
@@ -19,7 +21,7 @@
       },
       {
         "tag": "despedida",
-        "patterns": ["Chau", "Hasta Luego", "Chau, gracias", "Finalizar"],
+        "patterns": ["Chau, nos vemos", "Hasta Luego", "Chau, gracias", "Finalizar"],
         "responses": [
           "Chau, gracias por tu visita!",
           "Hasta luego!",
@@ -28,7 +30,7 @@
       },
       {
         "tag": "agradecimiento",
-        "patterns": ["Gracias", "Encontré lo que buscaba", "Listo", "Genial"],
+        "patterns": ["Gracias, duda resuelta", "Encontré lo que buscaba", "Listo, terminé", "Genial, resuelto", "Me resolviste la duda"],
         "responses": ["Me alegra ayudarte!", "Perfecto, un placer", "Estoy a la orden!"]
       },
       {
@@ -69,8 +71,10 @@
       {
         "tag": "info materias - TPI",
         "patterns": [
-          "Qué materias tiene la Tecnicatura en programación informática?", "Qué materias tiene la TPI?",
-          "Que materias tiene la Tecnicatura en programacion informatica?", "Que materias tiene la TPI?"
+          "Qué materias tiene la Tecnicatura en Programación Informática?", "Qué materias tiene la TPI?",
+          "Que materias tiene la Tecnicatura en Programacion Informatica?", "Que materias tiene la TPI?",
+          "Cuáles materias componen la Tecnicatura en Programación Informática?", "Cuáles materias componen la TPI?",
+          "Cuales materias componen la Tecnicatura en Programacion Informatica?", "Cuales materias componen la TPI?"
         ],
         "value": 1,
         "responses": [""]
@@ -78,47 +82,232 @@
       {
         "tag": "cantidad materias - TPI",
         "patterns": [
-          "Cuántas son las materias de la Tecnicatura en programación?", "Cuántas materias tiene la TPI?",
-          "Cuantas son las materias de la Tecnicatura en programacion?", "Cuantas materias tiene la TPI?"
+          "Cuántas son las materias de la Tecnicatura en Programación Informática?", "Cuántas materias tiene la TPI?",
+          "Cuantas son las materias de la Tecnicatura en Programacion Informatica?", "Cuantas materias tiene la TPI?",
+          "Cuántas materias tiene la Tecnicatura en Programación Informática?",
+          "Cuantas materias tiene la Tecnicatura en Programacion Informatica"
         ],
         "value": 1,
         "responses": [""]
       },
-            {
+      {
+        "tag": "info materias - LI",
+        "patterns": [
+          "Qué materias tiene la Licenciatura en Informática?", "Qué materias tiene la LI?",
+          "Que materias tiene la Licenciatura en Informatica?", "Que materias tiene la LI?",
+          "Cuáles materias componen la Licenciatura en Informática?", "Cuáles materias componen la LI?",
+          "Cuales materias componen la Licenciatura en Informatica?", "Cuales materias componen la LI?"
+        ],
+        "value": 2,
+        "responses": [""]
+      },
+      {
         "tag": "cantidad materias - LI",
         "patterns": [
+          "Cuántas son las materias de la Licenciatura en Informática?", "Cuántas materias tiene la LI?",
+          "Cuantas son las materias de la Licenciatura en Informatica?", "Cuantas materias tiene la LI?",
           "Cuántas materias tiene la Licenciatura en Informática?", "Cuántas materias tiene la LI?",
           "Cuantas materias tiene la Licenciatura en Informatica?", "Cuantas materias tiene la LI?"
         ],
         "value": 2,
         "responses": [""]
       },
-            {
-        "tag": "info materias - LI",
-        "patterns": [
-          "Qué materias tiene la Licenciatura en Informática?", "Qué materias tiene la LI?",
-          "Que materias tiene la Licenciatura en Informatica?", "Que materias tiene la LI?"
-        ],
-        "value": 2,
-        "responses": [""]
-      },
       {
-        "tag": "info materias - T.Biotecnologia",
+        "tag": "info materias - TBI",
         "patterns": [
-          "Cuáles son las materias de la Tecnicatura en Biotecnología?",
-          "Cuales son las materias de la Tecnicatura en Biotecnología?",
-          "Materias de la Tecnicatura en Biotecnologia"
+          "Qué materias tiene la Tecnicatura en Biotecnología?", "Qué materias tiene la TBI?",
+          "Que materias tiene la Tecnicatura en Biotecnologia?", "Que materias tiene la TBI?",
+          "Cuáles materias componen la Tecnicatura en Biotecnología?", "Cuáles materias componen la TBI?",
+          "Cuales materias componen la Tecnicatura en Biotecnologia?", "Cuales materias componen la TBI?"
         ],
         "value": 3,
         "responses": [""]
       },
       {
-        "tag": "cantidad materias - T.Biotecnologia",
+        "tag": "cantidad materias - TBI",
         "patterns": [
-          "Cuántas materias hay en la Tecnicatura en Biotecnología?",
-          "Cuantas materias hay en la Tecnicatura en Biotecnologia?"
+          "Cuántas son las materias de la Tecnicatura en Biotecnología?", "Cuántas materias tiene la TBI?",
+          "Cuantas son las materias de la Tecnicatura en Biotecnologia?", "Cuantas materias tiene la TBI?",
+          "Cuántas materias tiene la Tecnicatura en Biotecnología?", "Cuántas materias tiene la TBI?",
+          "Cuantas materias tiene la Tecnicatura en Biotecnologia?", "Cuantas materias tiene la TBI?"
         ],
         "value": 3,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - LBT",
+        "patterns": [
+          "Qué materias tiene la Licenciatura en Biotecnología?", "Qué materias tiene la LBT?",
+          "Que materias tiene la Licenciatura en Biotecnologia?", "Que materias tiene la LBT?",
+          "Cuáles materias componen la Licenciatura en Biotecnología?", "Cuáles materias componen la LBT?",
+          "Cuales materias componen la Licenciatura en Biotecnologia?", "Cuales materias componen la LBT?"
+        ],
+        "value": 4,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - LBT",
+        "patterns": [
+          "Cuántas son las materias de la Licenciatura en Biotecnología?", "Cuántas materias tiene la LBT?",
+          "Cuantas son las materias de la Licenciatura en Biotecnologia?", "Cuantas materias tiene la LBT?",
+          "Cuántas materias tiene la Licenciatura en Biotecnología?", "Cuántas materias tiene la LBT?",
+          "Cuantas materias tiene la Licenciatura en Biotecnologia?", "Cuantas materias tiene la LBT?"
+        ],
+        "value": 4,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - ARNAV",
+        "patterns": [
+          "Qué materias tiene Arquitectura Naval?", "Qué materias tiene la ARNAV?",
+          "Que materias tiene Arquitectura Naval?", "Que materias tiene la ARNAV?",
+          "Cuáles materias componen Arquitectura Naval?", "Cuáles materias componen la ARNAV?",
+          "Cuales materias componen Arquitectura Naval?", "Cuales materias componen la ARNAV?"
+        ],
+        "value": 5,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - ARNAV",
+        "patterns": [
+          "Cuántas son las materias de Arquitectura Naval?", "Cuántas materias tiene la ARNAV?",
+          "Cuantas son las materias de Arquitectura Naval?", "Cuantas materias tiene la ARNAV?",
+          "Cuántas materias tiene Arquitectura Naval?", "Cuántas materias tiene la ARNAV?",
+          "Cuantas materias tiene Arquitectura Naval?", "Cuantas materias tiene la ARNAV?"
+        ],
+        "value": 5,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - IAL",
+        "patterns": [
+          "Qué materias tiene la Ingeniería en Alimentos?", "Qué materias tiene la IAL?",
+          "Que materias tiene la Ingeneria en Alimentos?", "Que materias tiene la IAL?",
+          "Cuáles materias componen la Ingeniería en Alimentos?", "Cuáles materias componen la IAL?",
+          "Cuales materias componen la Ingenieria en Alimentos?", "Cuales materias componen la IAL?"
+        ],
+        "value": 6,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - IAL",
+        "patterns": [
+          "Cuántas son las materias de la Ingeniería en Alimentos?", "Cuántas materias tiene la IAL?",
+          "Cuantas son las materias de la Ingenieria en Alimentos?", "Cuantas materias tiene la IAL?",
+          "Cuántas materias tiene la Ingeniería en Alimentos?", "Cuántas materias tiene la IAL?",
+          "Cuantas materias tiene la Ingenieria en Alimentos?", "Cuantas materias tiene la IAL?"
+        ],
+        "value": 6,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - IACI",
+        "patterns": [
+          "Qué materias tiene la Ingeniería en Automatización y Control Industrial?", "Qué materias tiene la IACI?",
+          "Que materias tiene la Ingeneria en Automatizacion y Control Industrial?", "Que materias tiene la IACI?",
+          "Cuáles materias componen la Ingeniería en Automatización y Control Industrial?", "Cuáles materias componen la IACI?",
+          "Cuales materias componen la Ingenieria en Automatizacion y Control Industrial?", "Cuales materias componen la IACI?"
+        ],
+        "value": 7,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - IACI",
+        "patterns": [
+          "Cuántas son las materias de la Ingeniería en Automatización y Control Industrial?", "Cuántas materias tiene la IACI?",
+          "Cuantas son las materias de la Ingenieria en Automatizacion y Control Industrial?", "Cuantas materias tiene la IACI?",
+          "Cuántas materias tiene la Ingeniería en Automatización y Control Industrial?", "Cuántas materias tiene la IACI?",
+          "Cuantas materias tiene la Ingenieria en Automatizacion y Control Industrial?", "Cuantas materias tiene la IACI?"
+        ],
+        "value": 7,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - LBI",
+        "patterns": [
+          "Qué materias tiene la Licenciatura en Bioinformática?", "Qué materias tiene la LBI?",
+          "Que materias tiene la Licenciatura en Bioinformatica?", "Que materias tiene la LBI?",
+          "Cuáles materias componen la Licenciatura en Bioinformática?", "Cuáles materias componen la LBI?",
+          "Cuales materias componen la Licenciatura en Bioinformatica?", "Cuales materias componen la LBI?"
+        ],
+        "value": 8,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - LBI",
+        "patterns": [
+          "Cuántas son las materias de la Licenciatura en Bioinformática?", "Cuántas materias tiene la LBI?",
+          "Cuantas son las materias de la Licenciatura en Bioinformatica?", "Cuantas materias tiene la LBI?",
+          "Cuántas materias tiene la Licenciatura en Bioinformática?", "Cuántas materias tiene la LBI?",
+          "Cuantas materias tiene la Licenciatura en Bioinformatica?", "Cuantas materias tiene la LBI?"
+        ],
+        "value": 8,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - TQI",
+        "patterns": [
+          "Qué materias tiene la Tecnicatura Universitaria en Química?", "Qué materias tiene la TQI?",
+          "Que materias tiene la Tecnicatura Universitaria en Quimica?", "Que materias tiene la TQI?",
+          "Cuáles materias componen la Tecnicatura Universitaria en Química?", "Cuáles materias componen la TQI?",
+          "Cuales materias componen la Tecnicatura Universitaria en Quimica?", "Cuales materias componen la TQI?"
+        ],
+        "value": 9,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - TQI",
+        "patterns": [
+          "Cuántas son las materias de la Tecnicatura Universitaria en Química", "Cuántas materias tiene la TQI?",
+          "Cuantas son las materias de la Tecnicatura Universitaria en Quimica?", "Cuantas materias tiene la TQI?",
+          "Cuántas materias tiene la Tecnicatura Universitaria en Química?", "Cuántas materias tiene la TQI?",
+          "Cuantas materias tiene la Tecnicatura Universitaria en Quimica?", "Cuantas materias tiene la TQI?"
+        ],
+        "value": 9,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - TTAP",
+        "patterns": [
+          "Qué materias tiene la Tecnicatura Universitaria en Tecnología Ambiental y Petroquímica?", "Qué materias tiene la TTAP?",
+          "Que materias tiene la Tecnicatura Universitaria en Tecnologia Ambiental y Petroquimica?", "Que materias tiene la TTAP?",
+          "Cuáles materias componen la Tecnicatura Universitaria en Tecnología Ambiental y Petroquímica?", "Cuáles materias componen la TTAP?",
+          "Cuales materias componen la Tecnicatura Universitaria en Tecnologia Ambiental y Petroquimica?", "Cuales materias componen la TTAP?"
+        ],
+        "value": 10,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - TTAP",
+        "patterns": [
+          "Cuántas son las materias de la Tecnicatura Universitaria en Tecnología Ambiental y Petroquímica", "Cuántas materias tiene la TTAP?",
+          "Cuantas son las materias de la Tecnicatura Universitaria en Tecnologia Ambiental y Petroquimica?", "Cuantas materias tiene la TTAP?",
+          "Cuántas materias tiene la Tecnicatura Universitaria en Tecnología Ambiental y Petroquímica?", "Cuántas materias tiene la TTAP?",
+          "Cuantas materias tiene la Tecnicatura Universitaria en Tecnologia Ambiental y Petroquimica?", "Cuantas materias tiene la TTAP?"
+        ],
+        "value": 10,
+        "responses": [""]
+      },
+      {
+        "tag": "info materias - TUS",
+        "patterns": [
+          "Qué materias tiene la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Qué materias tiene la TUS?",
+          "Que materias tiene la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Que materias tiene la TUS?",
+          "Cuáles materias componen la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Cuáles materias componen la TUS?",
+          "Cuales materias componen la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Cuales materias componen la TUS?"
+        ],
+        "value": 11,
+        "responses": [""]
+      },
+      {
+        "tag": "cantidad materias - TUS",
+        "patterns": [
+          "Cuántas son las materias de la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Cuántas materias tiene la TUS?",
+          "Cuantas son las materias de la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Cuantas materias tiene la TUS?",
+          "Cuántas materias tiene la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Cuántas materias tiene la TUS?",
+          "Cuantas materias tiene la Tecnicatura Universitaria en Seguridad e Higiene en el Trabajo?", "Cuantas materias tiene la TUS?"
+        ],
+        "value": 11,
         "responses": [""]
       }
     ]
