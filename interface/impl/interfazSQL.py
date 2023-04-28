@@ -1,7 +1,8 @@
 from models.carrera import Carrera
 from persistence.carreraDAO import CarrerasDAO
+from interface.interfazTemplate import InterfazTemplate
 
-class InterfazMySQL(Carrera):
+class InterfazMySQL(InterfazTemplate):
 
     def __init__(self):
         super().__init__()
