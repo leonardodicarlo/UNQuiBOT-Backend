@@ -5,7 +5,9 @@ import torch
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
-from persistence.carreraDAO import CarrerasDAO
+from interface.interfazTemplate import InterfazTemplate
+from interface.impl.interfazSQL import InterfazMySQL
+from interface.middleware import Interfaz
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -27,6 +29,8 @@ model.load_state_dict(model_state)
 model.eval()
 
 bot_name = "UNQuiBOT"
+interface = Interfaz()
+
 
 def get_response(msg):
     sentence = tokenize(msg)
@@ -44,26 +48,12 @@ def get_response(msg):
     if prob.item() > 0.99:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                if "info materias - " in tag :
-                    return infoMateriasPorCarrera(intent["value"])
-                if "cantidad materias - " in tag :
-                    return cantidadMateriasPorCarrera(intent["value"])
+                if "info materias - " in tag:
+                    return interface.infoMateriasPorCarrera(intent["value"])
+                if "cantidad materias - " in tag:
+                    return interface.cantidadMateriasPorCarrera(intent["value"])
                 return random.choice(intent['responses'])
     return "No te entendí, todavía estoy aprendiendo..."
-
-# ---------------------- #
-carrerasDAO = CarrerasDAO()
-def infoMateriasPorCarrera(id):
-    carrera = carrerasDAO.findCarreraById(id)
-    infoCarrera= "Las materias de la carrera " + carrera.nombre + " son: " \
-           + carrera.infoMaterias()
-    return infoCarrera
-
-def cantidadMateriasPorCarrera(id):
-    carrera = carrerasDAO.findCarreraById(id)
-    cantidadMaterias= "La carrera " + carrera.nombre + " tiene " \
-           + str(len(carrera.materias)) + " materias"
-    return cantidadMaterias
 
 
 if __name__ == "__main__":
@@ -74,4 +64,3 @@ if __name__ == "__main__":
             break
 
         resp = get_response(sentence)
-        print(resp)
