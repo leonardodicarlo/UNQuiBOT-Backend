@@ -45,4 +45,18 @@ _Por último, se debe correr el archivo *train.py* al menos una vez, ya que este
 
 	$ python3 train.py
 
----
+***
+
+### Ejecución 💻
+
+_Primeramente se debe dejar ejecutado y corriendo nuestro chat backend:_
+
+	$ python3 app.py
+	
+_Luego hay que asegurarse de que está corriendo el Front de la aplicación, el cual se encuentra disponible en el siguiente repositorio:_
+	
+	$ https://github.com/leonardodicarlo/UNQuiBOT-Frontend
+
+_Esta aplicación generará los request hacia http://127.0.0.1:5000/predict, que es donde está escuchando nuestro backend._
+
+***
