@@ -1,6 +1,5 @@
 import unittest
-import os
-from chat import get_response
+from src.chat import get_response
 
 class ChatTest(unittest.TestCase):
 

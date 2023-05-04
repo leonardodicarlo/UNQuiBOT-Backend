@@ -1,11 +1,6 @@
 import unittest
 import sys
 
-sys.path.insert(0, '/Users/ldicarlo/Desktop/Documentos Míos/UnQ/TIP/UNQuiBOT-Backend/UNQuiBOT-Backend/')
-##sys.path.insert(0, '/Users/ldicarlo/Desktop/Documentos Míos/UnQ/TIP/UNQuiBOT-Backend/')
-##sys.path.insert(0,"/Users/ldicarlo/Library/Python/3.8/lib/python/site-packages")
-
-
 from interface.middleware import Middleware
 
 

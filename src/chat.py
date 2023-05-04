@@ -1,23 +1,26 @@
 import random
 import json
 import torch
+import os
 
+# Obtiene la ruta absoluta del directorio que contiene el script
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-from model import NeuralNet
-from nltk_utils import bag_of_words, tokenize
+# Combina la ruta absoluta del directorio del script con la ruta relativa al archivo
+intents_file = os.path.join(script_dir, 'intents.json')
+data_file = os.path.join(script_dir, 'data.pth')
 
+from src.model import NeuralNet
+from src.nltk_utils import bag_of_words, tokenize
 from interface.middleware import Middleware
-##from interface.interfazTemplate import InterfazTemplate
-##from interface.impl.interfazSQL import InterfazMySQL
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('./intents.json', 'r') as json_data:
+with open(intents_file, 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "./data.pth"
-data = torch.load(FILE)
+data = torch.load(data_file)
 
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
