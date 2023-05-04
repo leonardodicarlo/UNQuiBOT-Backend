@@ -2,7 +2,7 @@ from interface.interfazTemplate import InterfazTemplate
 from interface.impl.interfazSQL import InterfazMySQL
 
 
-class Interfaz:
+class Middleware:
 
     currentInterface: InterfazTemplate = InterfazMySQL()
 

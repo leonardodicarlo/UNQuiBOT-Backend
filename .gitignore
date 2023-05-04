@@ -9,4 +9,9 @@ __pycache__/
 .idea
 
 ## propio del proyecto 
-data.pth
+src/data.pth
+
+##entorno virtual local
+../venv
+
+.DS_Store

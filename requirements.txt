@@ -1,0 +1,8 @@
+torch>=2.0.0
+torchvision>=0.15.1
+torchaudio>=2.0.1
+nltk>=3.8.1
+Flask>=2.3.2
+Flask-Cors>=3.0.10
+pymysql
+cryptography

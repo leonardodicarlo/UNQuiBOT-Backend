@@ -2,12 +2,14 @@ import random
 import json
 import torch
 
+
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
-from interface.interfazTemplate import InterfazTemplate
-from interface.impl.interfazSQL import InterfazMySQL
-from interface.middleware import Interfaz
+from interface.middleware import Middleware
+##from interface.interfazTemplate import InterfazTemplate
+##from interface.impl.interfazSQL import InterfazMySQL
+
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -29,7 +31,7 @@ model.load_state_dict(model_state)
 model.eval()
 
 bot_name = "UNQuiBOT"
-interface = Interfaz()
+interface = Middleware()
 
 
 def get_response(msg):
