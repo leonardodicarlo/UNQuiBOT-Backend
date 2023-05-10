@@ -1,5 +1,5 @@
 from models.carrera import Carrera
-from models.usuario import Usuario
+from models.materia import Materia
 
 class InterfazTemplate:
 
@@ -11,6 +11,6 @@ class InterfazTemplate:
         """ Dado un ID de carrera, retorna la cantidad sus materias cargadas """
         pass
 
-    def getMateriasByUserId(self, usr) -> Usuario:
+    def getMateriasByUserId(self, usr) -> [Materia]:
         """ Dado un ID de usuario, retorna sus materias aprobadas """
         pass
