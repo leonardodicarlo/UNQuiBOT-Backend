@@ -1,4 +1,4 @@
-from bd.database import Database
+from .bd.database import Database
 
 
 class UsuarioDAO:

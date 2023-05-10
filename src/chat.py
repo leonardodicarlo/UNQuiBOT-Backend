@@ -37,7 +37,7 @@ bot_name = "UNQuiBOT"
 interface = Middleware()
 
 
-def get_response(msg):
+def get_response(msg, usr):
     sentence = tokenize(msg)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
@@ -57,6 +57,11 @@ def get_response(msg):
                     return interface.infoMateriasPorCarrera(intent["value"])
                 if "cantidad materias - " in tag:
                     return interface.cantidadMateriasPorCarrera(intent["value"])
+                if ("info usuario -" in tag) and (usr==0):
+                    return "Aún no estás logueado, no puedo responderte esa información."
+                if ("info usuario - Materias Cursadas" in tag) and (usr!=0):
+                    return interface.materiasAprobadasDelUsuario(usr)
+
                 return random.choice(intent['responses'])
     return "No te entendí, todavía estoy aprendiendo..."
 

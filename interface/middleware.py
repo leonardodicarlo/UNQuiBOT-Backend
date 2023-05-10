@@ -17,3 +17,10 @@ class Middleware:
         cantidadMaterias = "La carrera " + carrera.nombre + " tiene " \
                         + str(len(carrera.materias)) + " materias"
         return cantidadMaterias
+
+
+    def materiasAprobadasDelUsuario(self, usr):
+        materiasAprobadas = self.currentInterface.getMateriasByUserId(usr)
+        nombreMaterias = [x['nombre'] for x in materiasAprobadas]
+        resp = "Tenés las siguientes materias aprobadas: <br/>" + " <br/>".join(nombreMaterias)
+        return resp
