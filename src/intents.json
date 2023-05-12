@@ -36,8 +36,8 @@
       {
         "tag": "aulas",
         "patterns": [
-          "¿Dónde quedan las aulas?",
-          "¿En qué aula curso?",
+          "¿Dónde quedan las aulas?","¿Donde quedan las aulas?",
+          "¿En qué aula curso?", "¿En que aula curso?",
           "¿Cómo llego al aula?"
         ],
         "responses": [
