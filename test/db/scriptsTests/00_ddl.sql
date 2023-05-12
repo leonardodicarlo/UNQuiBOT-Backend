@@ -1,5 +1,6 @@
+--- Tablas para Testing
+-- (debieron quitarse algunas caracteristicas como indexes, collation, etc)
 
----Table usuario
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
 `id` int NOT NULL,

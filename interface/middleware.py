@@ -4,7 +4,8 @@ from interface.impl.interfazSQL import InterfazMySQL
 
 class Middleware:
 
-    currentInterface: InterfazTemplate = InterfazMySQL()
+    def __init__(self, interface=InterfazMySQL()):
+        self.currentInterface: InterfazTemplate = interface
 
     def infoMateriasPorCarrera(self, id):
         carrera = self.currentInterface.getCarreraById(int(id))
