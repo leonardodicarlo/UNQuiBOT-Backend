@@ -37,6 +37,64 @@ bot_name = "UNQuiBOT"
 interface = Middleware()
 
 
+class IntentHandler:
+    def __init__(self, next_handler=None):
+        self.next_handler = next_handler
+
+    def handle(self, intent, usr):
+        raise NotImplementedError("Las subclases deben implementar este método")
+
+    def set_next_handler(self, handler):
+        self.next_handler = handler
+
+
+class InfoMateriasHandler(IntentHandler):
+    def handle(self, intent, usr):
+        if "info materias - " in intent["tag"]:
+            return interface.infoMateriasPorCarrera(intent["value"])
+        elif self.next_handler is not None:
+            return self.next_handler.handle(intent, usr)
+
+
+class CantidadMateriasHandler(IntentHandler):
+    def handle(self, intent, usr):
+        if "cantidad materias - " in intent["tag"]:
+            return interface.cantidadMateriasPorCarrera(intent["value"])
+        elif self.next_handler is not None:
+            return self.next_handler.handle(intent, usr)
+
+
+class InfoUsuarioHandler(IntentHandler):
+    def handle(self, intent, usr):
+        if "info usuario -" in intent["tag"]:
+            if usr == 0:
+                return "Aún no estás logueado, no puedo responderte esa información."
+            elif "Materias Cursadas" in intent["tag"]:
+                return interface.materiasAprobadasDelUsuario(usr)
+        elif self.next_handler is not None:
+            return self.next_handler.handle(intent, usr)
+
+
+class DefaultHandler(IntentHandler):
+    def handle(self, intent, usr):
+        if intent["tag"] is not None:
+            return random.choice(intent['responses'])
+        return "No te entendí, todavía estoy aprendiendo..."
+
+
+class IntentProcessor:
+    def __init__(self):
+        self.handlers = InfoMateriasHandler(
+            CantidadMateriasHandler(
+                InfoUsuarioHandler(
+                    DefaultHandler()
+                )
+            )
+        )
+
+    def process(self, intent, usr):
+        return self.handlers.handle(intent, usr)
+
 def get_response(msg, usr):
     sentence = tokenize(msg)
     X = bag_of_words(sentence, all_words)
@@ -50,21 +108,17 @@ def get_response(msg, usr):
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
+
     if prob.item() > 0.99:
-        for intent in intents['intents']:
-            if tag == intent["tag"]:
-                if "info materias - " in tag:
-                    return interface.infoMateriasPorCarrera(intent["value"])
-                if "cantidad materias - " in tag:
-                    return interface.cantidadMateriasPorCarrera(intent["value"])
-                if ("info usuario -" in tag) and (usr==0):
-                    return "Aún no estás logueado, no puedo responderte esa información."
-                if ("info usuario - Materias Cursadas" in tag) and (usr!=0):
-                    return interface.materiasAprobadasDelUsuario(usr)
+        intent = None
+        for i in intents['intents']:
+            if i["tag"] == tag:
+                intent = i
+                break
+        if intent is not None:
+            return IntentProcessor().process(intent, usr)
 
-                return random.choice(intent['responses'])
     return "No te entendí, todavía estoy aprendiendo..."
-
 
 if __name__ == "__main__":
     print("Hablemos! (escribí 'salir' para finalizar)")
