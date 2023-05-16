@@ -24,3 +24,7 @@ class Middleware:
         nombreMaterias = [x['nombre'] for x in materiasAprobadas]
         resp = "Tenés las siguientes materias aprobadas: <br/>" + " <br/>".join(nombreMaterias)
         return resp
+
+    def promedioDelUsuario(self, usr):
+        resp = "Tu promedio actual es: " + str(self.currentInterface.promedioByUserId(usr))
+        return resp

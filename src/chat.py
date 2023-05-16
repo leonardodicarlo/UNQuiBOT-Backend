@@ -71,6 +71,8 @@ class InfoUsuarioHandler(IntentHandler):
                 return "Aún no estás logueado, no puedo responderte esa información."
             elif "Materias Cursadas" in intent["tag"]:
                 return interface.materiasAprobadasDelUsuario(usr)
+            elif "Promedio" in intent["tag"]:
+                return interface.promedioDelUsuario(usr)
         elif self.next_handler is not None:
             return self.next_handler.handle(intent, usr)
 

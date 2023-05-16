@@ -26,3 +26,9 @@ class InterfazMySQL(InterfazTemplate):
         print("getMateriasByUserId")
         return self.daoUser.getMateriasAprobadas(id)
 
+    def promedioByUserId(self, usr) -> float:
+        """ Dado un ID de usuario, retorna el promedio de todas sus notas finales """
+        print("promedioByUserId")
+        return self.daoUser.getPromedio(usr)
+
+
