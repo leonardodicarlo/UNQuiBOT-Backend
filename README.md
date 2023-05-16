@@ -11,35 +11,25 @@
 
 ### Deploy 🔧
 
-_Para correr el software localmente debemos tener instalado tanto Python 3 como Flask y las librerías PyTorch y nltk._
+_Para correr el software localmente debemos tener instalado tanto Python 3 como algún gestor de paquetes (recomendamos pip3)._
 
-_Primero, nos asegurarnos que tenemos Python 3 correctamente instalado (chequeo a través del Terminal):_
+_Primero, con este repositorio clonado, se debe generar un entorno virtual ubicados dentro del Proyecto:_
 
-	$ python3 -V
+	$ virtualenv unquibot_env
 	
-	En caso de no tener la versión 3 de Python, correr los siguientes comandos:
+	Se genera un directorio nuevo, entonces:
 
-	$ sudo apt-get update
-	$ sudo apt-get -y upgrade
+	$ source unquibot_env/bin/activate
+
 	
-	Además, es recomendado tener instalado *pip* para manejar los paquetes:
-
-	$ sudo apt-get install -y python3-pip
-	
-_Segundo, instalar la librería PyTorch, que es la que generará y entranará nuestra red neuronal:_
+_Segundo, con nuestro entorno virtual activo, se deben instalar todas las dependencias a través del archivo requirements.txt:_
 
 
-	$ pip3 install torch torchvision torchaudio
+	$ pip3 install -r requirements.txt
 	
 	
-_Tercero, se debe instalar la librería nltk, que es la que procesará el lenguaje con el que se interactue:_
-
-	$ pip3 install nltk
+_Tercero, se debe configurar en su IDE como archivo de entrada a app.py_
 	
-_Cuarto, se debe instalar Flask, lo cual levantará en http://127.0.0.1:5000/predict una aplicación en escucha:_
-
-	$ pip3 install Flask
-	$ pip3 install flask-cors
 	
 _Por último, se debe correr el archivo *train.py* al menos una vez, ya que este generará el archivo *data.pth*:_
 
@@ -49,11 +39,8 @@ _Por último, se debe correr el archivo *train.py* al menos una vez, ya que este
 
 ### Ejecución 💻
 
-_Primeramente se debe dejar ejecutado y corriendo nuestro chat backend:_
-
-	$ python3 app.py
 	
-_Luego hay que asegurarse de que está corriendo el Front de la aplicación, el cual se encuentra disponible en el siguiente repositorio:_
+_Hay que asegurarse de que está corriendo el Front de la aplicación, el cual se encuentra disponible en el siguiente repositorio:_
 	
 	$ https://github.com/leonardodicarlo/UNQuiBOT-Frontend
 

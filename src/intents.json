@@ -309,6 +309,21 @@
         ],
         "value": 11,
         "responses": [""]
+      },
+      {
+        "tag": "info usuario - No Logueado",
+        "patterns": [
+          "¿Cuál es mi coeficiente?", "Cuál es mi coeficiente?", "Cual es mi coeficiente"
+        ],
+        "responses": [""]
+      },
+      {
+        "tag": "info usuario - Materias Cursadas",
+        "patterns": [
+          "¿Qué materias tengo aprobadas?", "Qué materias tengo aprobadas?", "¿Que materias tengo aprobadas?",
+          "Que materias tengo aprobadas?", "Que materias tengo aprobadas"
+        ],
+        "responses": [""]
       }
     ]
   }
