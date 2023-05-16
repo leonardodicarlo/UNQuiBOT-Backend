@@ -19,4 +19,7 @@ class UsuarioDAO:
             .format(idUsr=idUsuario)
         notas = self._db.execute_query(sql)
         suma_notas = sum(nota['notaFinal'] for nota in notas)
-        return suma_notas / len(notas)
+        if len(notas) != 0:
+            return suma_notas / len(notas)
+        else:
+            return 0
