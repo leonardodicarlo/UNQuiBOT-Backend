@@ -321,7 +321,18 @@
         "tag": "info usuario - Materias Cursadas",
         "patterns": [
           "¿Qué materias tengo aprobadas?", "Qué materias tengo aprobadas?", "¿Que materias tengo aprobadas?",
-          "Que materias tengo aprobadas?", "Que materias tengo aprobadas"
+          "¿Qué materias ya aprobé?", "Qué materias ya aprobé?", "¿Que materias ya aprobe?", "Que materias ya aprobe?",
+          "Que materias tengo aprobadas?", "Que materias tengo aprobadas", "¿Cuáles materias ya tengo aprobadas?",
+          "Cuáles materias ya tengo aprobadas?", "¿Cuales materias ya tengo aprobadas?", "Cuales materias ya tengo aprobadas?"
+        ],
+        "responses": [""]
+      },
+      {
+        "tag": "info usuario - Promedio",
+        "patterns": [
+          "¿Cuál es mi promedio?", "Cuál es mi promedio?", "¿Cual es mi promedio?",
+          "Cual es mi promedio?","¿Qué promedio tengo?", "Qué promedio tengo?", "Que promedio tengo?",
+          "¿De cuánto es mi promedio?", "De cuánto es mi promedio?", "¿De cuanto es mi promedio?", "De cuanto es mi promedio?"
         ],
         "responses": [""]
       }

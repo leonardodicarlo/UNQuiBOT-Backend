@@ -23,5 +23,16 @@ class Middleware:
     def materiasAprobadasDelUsuario(self, usr):
         materiasAprobadas = self.currentInterface.getMateriasByUserId(usr)
         nombreMaterias = [x['nombre'] for x in materiasAprobadas]
-        resp = "Tenés las siguientes materias aprobadas: <br/>" + " <br/>".join(nombreMaterias)
+        if len(materiasAprobadas) != 0:
+            resp = "Tenés las siguientes materias aprobadas: <br/>" + " <br/>".join(nombreMaterias)
+        else:
+            resp = "Aún no tenés materias aprobadas"
+        return resp
+
+    def promedioDelUsuario(self, usr):
+        promedio = self.currentInterface.promedioByUserId(usr)
+        if promedio != 0:
+            resp = "Tu promedio actual es: " + str(promedio)
+        else:
+            resp = "Aún no tenés notas cargadas"
         return resp
