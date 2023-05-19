@@ -23,7 +23,8 @@ CREATE TABLE `usuario_carreras` (
 DROP TABLE IF EXISTS `usuario_mcursadas`;
 CREATE TABLE `usuario_mcursadas` (
 `idUsuario` int NOT NULL,
-`idMateria` int NOT NULL
+`idMateria` int NOT NULL,
+`notaFinal` int NULL
 );
 
 

@@ -20,8 +20,7 @@ class MiddlewareTest(unittest.TestCase):
         idCarreraTPI = 1
 
         # Carga de datos
-        insertCarrera = "INSERT INTO carrera(id, nombre, depto) VALUES (" + str(
-            idCarreraTPI) + ", 'Tecnicatura en Programacion Informatica', 'CYT');"
+        insertCarrera = "INSERT INTO carrera(id, nombre, depto) VALUES (" + str(idCarreraTPI) + ", 'Tecnicatura en Programacion Informatica', 'CYT');"
         self.dbTesting.ejecutarComandosMult(insertCarrera)
 
         # Test de metodo 'cantidadMateriasPorCarrera'
@@ -91,7 +90,7 @@ class MiddlewareTest(unittest.TestCase):
 
         # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
         response = self.middlewareTest.materiasAprobadasDelUsuario(idUsuario)
-        expected = "Tenés las siguientes materias aprobadas: <br/>"
+        expected = "Aún no tenés materias aprobadas"
         self.assertEqual(response, expected)
 
     def test_usuario_con_2_materias_aprobadas(self):
@@ -99,7 +98,7 @@ class MiddlewareTest(unittest.TestCase):
         # Carga de datos
         insertUsuario = "INSERT INTO usuario(id, dni, legajo) VALUES (" + str(idUsuario) + ", 11222333, '1111');"
         insertMaterias = "INSERT INTO materia (id,nombre) VALUES (165, 'Introduccion a la programacion'),(204,'Organizacion de Computadoras');"
-        insertUsuarioMateriasAprobadas = "INSERT INTO usuario_mcursadas (idUsuario,idMateria) VALUES("+str(idUsuario)+", 165),("+str(idUsuario)+", 204);"
+        insertUsuarioMateriasAprobadas = "INSERT INTO usuario_mcursadas (idUsuario,idMateria,notaFinal) VALUES("+str(idUsuario)+", 165, 7),("+str(idUsuario)+", 204, 7);"
         self.dbTesting.ejecutarComandosMult(insertUsuario+insertMaterias+insertUsuarioMateriasAprobadas)
 
         # Test de metodo 'materiasAprobadasDelUsuario'
@@ -107,6 +106,42 @@ class MiddlewareTest(unittest.TestCase):
         expected = "Tenés las siguientes materias aprobadas: <br/>Introduccion a la programacion <br/>Organizacion de Computadoras"
         self.assertEqual(response, expected)
 
+    def test_usuario_No_existente(self):
+        idUsuario = 1
+        # No hay Carga de datos
+
+        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
+        response = self.middlewareTest.materiasAprobadasDelUsuario(idUsuario)
+        expected = "Aún no tenés materias aprobadas"
+        self.assertEqual(response, expected)
+
+    def test_Promedio_de_usuario_sin_materias_aprobadas(self):
+        idUsuario = 1
+
+        # Carga de datos
+        insertUsuario = "INSERT INTO usuario(id, dni, legajo) VALUES (" + str(idUsuario) + ", 11222333, '1111');"
+        self.dbTesting.ejecutarComandosMult(insertUsuario)
+
+        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
+        response = self.middlewareTest.promedioDelUsuario(idUsuario)
+        expected = "Aún no tenés notas cargadas"
+        self.assertEqual(response, expected)
+
+    def test_Promedio_de_usuario_con_2_materias_aprobadas(self):
+        idUsuario = 1
+        nota1 = 10
+        nota2 = 4
+
+        # Carga de datos
+        insertUsuario = "INSERT INTO usuario(id, dni, legajo) VALUES (" + str(idUsuario) + ", 11222333, '1111');"
+        insertMaterias = "INSERT INTO materia (id,nombre) VALUES (165, 'Introduccion a la programacion'),(204,'Organizacion de Computadoras');"
+        insertUsuarioMateriasAprobadas = "INSERT INTO usuario_mcursadas (idUsuario,idMateria, notaFinal) VALUES("+str(idUsuario)+", 165, "+str(nota1)+"),("+str(idUsuario)+", 204, "+str(nota2)+");"
+        self.dbTesting.ejecutarComandosMult(insertUsuario + insertMaterias + insertUsuarioMateriasAprobadas)
+
+        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
+        response = self.middlewareTest.promedioDelUsuario(idUsuario)
+        expected = "Tu promedio actual es: 7.0"
+        self.assertEqual(expected,response)
 
 if __name__ == '__main__':
     unittest.main()
