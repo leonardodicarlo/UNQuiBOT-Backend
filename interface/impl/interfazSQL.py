@@ -6,7 +6,7 @@ from interface.interfazTemplate import InterfazTemplate
 
 class InterfazMySQL(InterfazTemplate):
 
-    def __init__(self, dao = CarrerasDAO()):
+    def __init__(self):
         super().__init__()
         self.dao = CarrerasDAO()
         self.daoUser = UsuarioDAO()

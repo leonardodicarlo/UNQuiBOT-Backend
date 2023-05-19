@@ -12,10 +12,12 @@ class DatabaseMemory:
         self.connection.row_factory = sqlite3.Row
         self.db_session = self.connection.cursor()
 
-        self.setUp()
+        self.setUpDDL()
 
-    def setUp(self):
-        print("setUp DB en memoria")
+    def setUpDDL(self):
+        """
+        DB en memoria: Creacion de tablas y datos iniciales
+        """
         # Obtiene la ruta absoluta del directorio que contiene el script
         script_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -42,3 +44,13 @@ class DatabaseMemory:
 
     def close(self):
         self.connection.close()
+
+    def ejecutarComandosMult(self, sentenciasSQL: str):
+        """
+        :param sentencias SQL separadas por ';'
+        """
+        listSQL = sentenciasSQL.split(";")
+        for comando in listSQL:
+            self.db_session.execute(comando)
+            self.connection.commit()
+            # print("ok: "+comando)

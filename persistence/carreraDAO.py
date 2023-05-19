@@ -4,8 +4,8 @@ from .bd.database import Database
 
 
 class CarrerasDAO:
-    def __init__(self, db=Database()):
-        self.db = db
+    def __init__(self):
+        self.db = Database()
 
     def findCarreraById(self, id):
         sql = "select c.id, c.nombre, c.depto from carrera c where id = '" + str(id) + "'"
