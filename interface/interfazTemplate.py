@@ -11,6 +11,10 @@ class InterfazTemplate:
         """ Dado un ID de carrera, retorna la cantidad sus materias cargadas """
         pass
 
+    def getInfoMateria(self, id:int) -> dict:
+        """ Dado un ID de materia, retorna la información de la cursada actual para dicha materia"""
+        pass
+
     def getMateriasByUserId(self, usr) -> [Materia]:
         """ Dado un ID de usuario, retorna sus materias aprobadas """
         pass
