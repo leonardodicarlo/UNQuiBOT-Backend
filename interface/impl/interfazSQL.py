@@ -23,7 +23,6 @@ class InterfazMySQL(InterfazTemplate):
 
     def getInfoMateria(self, id:int) -> dict:
         """ Dado un ID de materia, retorna la información de la cursada actual para dicha materia"""
-        print("getInfoMateria")
         return self.daoMateria.getInfoMateriaById(id)
 
     def getMateriasByUserId(self, id) -> Usuario:
