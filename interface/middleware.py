@@ -21,6 +21,9 @@ class Middleware:
 
     def infoMateria(self, id):
         dictMaterias = self.currentInterface.getInfoMateria(int(id))
+        if not dictMaterias:
+            return "No existen Cursadas activas para esa materia..."
+
         nombre_materia = dictMaterias[0]['nombreMateria']
         email_grupo = dictMaterias[0]['emailGrupo']
         horarios_aulas = []

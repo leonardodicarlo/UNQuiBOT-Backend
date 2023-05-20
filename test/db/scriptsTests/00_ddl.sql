@@ -54,9 +54,10 @@ DROP TABLE IF EXISTS `cursada`;
 CREATE TABLE `cursada` (
 `id` int NOT NULL,
 `idMateria` int NOT NULL,
+`comision` int NULL,
+`nombreMateria` varchar(255) NULL,
 `emailGrupo` varchar(255) NULL,
 `horarios` varchar(255) NULL,
-`docentes` varchar(255) NULL,
 `periodo` varchar(20) NULL,
 `activa` bit(1) DEFAULT NULL,
 `aulas` varchar(255) DEFAULT NULL,
