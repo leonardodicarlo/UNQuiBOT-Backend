@@ -54,9 +54,10 @@ DROP TABLE IF EXISTS `cursada`;
 CREATE TABLE `cursada` (
   `id` int NOT NULL AUTO_INCREMENT,
   `idMateria` int NOT NULL,
+  `comision` int NOT NULL,
+  `nombreMateria` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `emailGrupo` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `horarios` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
-  `docentes` varchar(255) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `periodo` varchar(20) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
   `activa` bit(1) DEFAULT NULL,
   `aulas` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,

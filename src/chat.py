@@ -48,7 +48,7 @@ class IntentHandler:
         self.next_handler = handler
 
 
-class InfoMateriasHandler(IntentHandler):
+class InfoCarrerasHandler(IntentHandler):
     def handle(self, intent, usr):
         if "info materias - " in intent["tag"]:
             return interface.infoMateriasPorCarrera(intent["value"])
@@ -63,6 +63,12 @@ class CantidadMateriasHandler(IntentHandler):
         elif self.next_handler is not None:
             return self.next_handler.handle(intent, usr)
 
+class InfoMateriasHandler(IntentHandler):
+    def handle(self, intent, usr):
+        if "info materia - " in intent["tag"]:
+            return interface.infoMateria(intent["value"])
+        elif self.next_handler is not None:
+            return self.next_handler.handle(intent, usr)
 
 class InfoUsuarioHandler(IntentHandler):
     def handle(self, intent, usr):
@@ -86,10 +92,12 @@ class DefaultHandler(IntentHandler):
 
 class IntentProcessor:
     def __init__(self):
-        self.handlers = InfoMateriasHandler(
+        self.handlers = InfoCarrerasHandler(
             CantidadMateriasHandler(
-                InfoUsuarioHandler(
-                    DefaultHandler()
+                InfoMateriasHandler(
+                    InfoUsuarioHandler(
+                        DefaultHandler()
+                    )
                 )
             )
         )

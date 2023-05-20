@@ -1,19 +1,17 @@
 import pymysql
-import os
-import sys
 
 from pymysql.cursors import DictCursor
-
+from local_settings import DB_HOST, DB_NAME, DB_USER, DB_PASSWORD
 
 #print(sys.argv[1])
 
 class Database:
     def __init__(self):
-        self.connection = pymysql.connect(
-            host='localhost',
-            user='root',
-            password='rootPass',
-            db='cpi_unqbot'
+        self._connection = pymysql.connect(
+            host=DB_HOST,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            db=DB_NAME
         )
         self.cursor = self.connection.cursor(DictCursor)
 
