@@ -12,7 +12,7 @@
 ### Deploy 🔧
 
 _Para correr el software localmente debemos tener instalado tanto Python 3 como algún gestor de paquetes (recomendamos pip3)._
-
+***
 _Primero, con este repositorio clonado, se debe generar un entorno virtual ubicados dentro del Proyecto:_
 
 	$ virtualenv unquibot_env
@@ -21,19 +21,27 @@ _Primero, con este repositorio clonado, se debe generar un entorno virtual ubica
 
 	$ source unquibot_env/bin/activate
 
-	
+***
 _Segundo, con nuestro entorno virtual activo, se deben instalar todas las dependencias a través del archivo requirements.txt:_
 
 
 	$ pip3 install -r requirements.txt
 	
-	
+***	
 _Tercero, se debe configurar en su IDE como archivo de entrada a app.py_
 	
-	
-_Por último, se debe correr el archivo *train.py* al menos una vez, ya que este generará el archivo *data.pth*:_
+***	
+_Cuarto, se debe correr el archivo *train.py* al menos una vez, ya que este generará el archivo *data.pth*:_
 
 	$ python3 train.py
+***
+_Por último, se debe agregar un archivo local_settings.py (a la misma altura de directorios que el requirements.txt) para poder guardar de manera local y segura las credenciales que pudieran estar presentes en el código. La estructura del archivo debe tener lo siguiente:_
+
+
+	DB_HOST = 'hostDeLaBase' (suele ser localhost)
+	DB_USER = 'usuarioDeLaBase' (suele ser root)
+	DB_PASSWORD = 'contraseñaDeLaBase'
+	DB_NAME = 'nombreDelEsquema' (se recomienda cpi_unqbot)
 
 ***
 
