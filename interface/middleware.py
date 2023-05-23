@@ -24,9 +24,9 @@ class Middleware:
         email_grupo = dictMaterias[0]['emailGrupo']
         horarios_aulas = []
         for item in dictMaterias:
-            horarios_aulas.append(item['horarios'] + ' - ' + item['aulas'])
-        horarios_aulas_str = '\n<br/>'.join(horarios_aulas)
-        result = f'Materia: {nombre_materia}\n<br/>Lista de Mail: {email_grupo}\n\n<br/>Horarios y Aulas:\n{horarios_aulas_str}'
+            horarios_aulas.append(item['horarios'] + ' - ' + 'Aulas: ' + item['aulas'])
+        horarios_aulas_str = '\n<br/><br/>'.join(horarios_aulas)
+        result = f'Materia: {nombre_materia}\n<br/><br/>Lista de Mail: {email_grupo}\n\n<br/><br/>Horarios y Aulas:\n{horarios_aulas_str}'
         return result
 
     def materiasAprobadasDelUsuario(self, usr):

@@ -48,13 +48,13 @@
       {
         "tag": "inscripciones",
         "patterns": [
-          "¿Cuando empieza la fecha de inscripciones?",
-          "¿En qué fecha puedo inscribirme?",
-          "¿Cuando puedo anotarme?",
-          "¿Ya pasó la fecha de inscripción?"
+          "¿Cuando empieza la fecha de inscripciones?", "¿En qué fecha puedo inscribirme?",
+          "¿Cuando puedo anotarme?", "¿Ya pasó la fecha de inscripción?", "¿Cuando puedo inscribirme?",
+          "Cuando empieza la fecha de inscripciones?", "En que fecha puedo inscribirme?", "Cuando puedo anotarme?",
+          "Ya paso la fecha de inscripcion?", "Cuando puedo inscribirme"
         ],
         "responses": [
-          "En esta sección de nuestra web vas a encontrar las fechas que buscás: http://www.unq.edu.ar/secciones/524-calendario-acad%C3%A9mico-2023/"
+          "Ya pasó la fecha de inscripción, las inscripciones al C2-2024 comienzan el 01/08/2023.<br/><br/>En esta sección de nuestra web tenés mas información: http://cpi.blog.unq.edu.ar/oferta-academica/"
         ]
       },
       {
@@ -330,12 +330,465 @@
         "responses": [""]
       },
       {
-        "tag": "info materia - Matematica I",
+        "tag": "info materia - Matemática I",
         "patterns": [
           "¿Cuál es la lista de Matemática I?", "Cuál es la lista de Matemática I?", "Cual es la lista de Matematica I?",
-          "¿Dónde puedo mandar mail por Matemática I?","Dónde puedo mandar mail por Matemática I?", "¿Donde puedo mandar mail por Matematica I?", "Donde puedo mandar mail por Matematica I?"
+          "¿Dónde puedo mandar mail por Matemática I?","Dónde puedo mandar mail por Matemática I?", "¿Donde puedo mandar mail por Matematica I?", "Donde puedo mandar mail por Matematica I?",
+          "Necesito información sobre Matematica I", "¿Cuál es la lista de Matemática 1?", "Cuál es la lista de Matemática 1?", "Cual es la lista de Matematica 1?",
+          "¿Dónde puedo mandar mail por Matemática 1?","Dónde puedo mandar mail por Matemática 1?", "¿Donde puedo mandar mail por Matematica 1?", "Donde puedo mandar mail por Matematica 1?",
+          "Necesito información sobre Matematica 1", "¿Cuál es la lista de Mate 1?", "Cuál es la lista de Mate 1?", "Cual es la lista de Mate 1?",
+          "¿Dónde puedo mandar mail por Mate 1?","Dónde puedo mandar mail por Mate 1?", "¿Donde puedo mandar mail por Mate 1?", "Donde puedo mandar mail por Mate 1?",
+          "Necesito información sobre Mate 1"
+        ],
+        "value": 185,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Introducción a la Programación",
+        "patterns": [
+          "¿Cuál es la lista de Introducción a la Programación?", "Cuál es la lista de Introducción a la Programación?", "Cual es la lista de Introduccion a la Programacion?",
+          "¿Dónde puedo mandar mail por Introducción a la Programación?","Dónde puedo mandar mail por Introducción a la Programación?", "¿Donde puedo mandar mail por Introduccion a la Programacion?", "Donde puedo mandar mail por Introduccion a la Programacion?",
+          "Necesito información sobre Introduccion a la Programacion", "¿Cuál es la lista de Intro?", "Cuál es la lista de Intro?", "Cual es la lista de Intro?",
+          "¿Dónde puedo mandar mail por Intro?","Dónde puedo mandar mail por Intro?", "¿Donde puedo mandar mail por Intro?", "Donde puedo mandar mail por Intro?",
+          "Necesito información sobre Intro", "¿Cuál es la lista de Intro?", "Cuál es la lista de Intro?", "Cual es la lista de Intro?"
         ],
         "value": 166,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Organización de Computadoras",
+        "patterns": [
+          "¿Cuál es la lista de Organización de Computadoras?", "Cuál es la lista de Organización de Computadoras?", "Cual es la lista de Organizacion de Computadoras?",
+          "¿Dónde puedo mandar mail por Organización de Computadoras?","Dónde puedo mandar mail por Organización de Computadoras?", "¿Donde puedo mandar mail por Organizacion de Computadoras?", "Donde puedo mandar mail por Organizacion de Computadoras?",
+          "Necesito información sobre Organizacion de Computadoras", "¿Cuál es la lista de Orga?", "Cuál es la lista de Orga?", "Cual es la lista de Orga?",
+          "¿Dónde puedo mandar mail por Orga?","Dónde puedo mandar mail por Orga?", "¿Donde puedo mandar mail por Orga?", "Donde puedo mandar mail por Orga?",
+          "Necesito información sobre Orga", "¿Cuál es la lista de Orga?", "Cuál es la lista de Orga?", "Cual es la lista de Orga?"
+        ],
+        "value": 204,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Programación con Objetos I",
+        "patterns": [
+          "¿Cuál es la lista de Programación con Objetos I?", "Cuál es la lista de Programación con Objetos I?", "Cual es la lista de Programacion con Objetos I?",
+          "¿Dónde puedo mandar mail por Programación con Objetos I?","Dónde puedo mandar mail por Programación con Objetos I?", "¿Donde puedo mandar mail por Programacion con Objetos I?", "Donde puedo mandar mail por Programacion con Objetos I?",
+          "Necesito información sobre Programación con Objetos I", "¿Cuál es la lista de Programación con Objetos 1?", "Cuál es la lista de Programación con Objetos 1?", "Cual es la lista de Programacion con Objetos 1?",
+          "¿Dónde puedo mandar mail por Programación con Objetos 1?","Dónde puedo mandar mail por Programación con Objetos 1?", "¿Donde puedo mandar mail por Programacion con Objetos 1?", "Donde puedo mandar mail por Programacion con Objetos 1?",
+          "Necesito información sobre Programación con Objetos 1", "¿Cuál es la lista de Objetos 1?", "Cuál es la lista de Objetos 1?", "Cual es la lista de Objetos 1?",
+          "¿Dónde puedo mandar mail por Objetos 1?","Dónde puedo mandar mail por Objetos 1?", "¿Donde puedo mandar mail por Objetos 1?", "Donde puedo mandar mail por Objetos 1?",
+          "Necesito información sobre Objetos 1", "¿Cuál es la lista de Objetos 1?", "Cuál es la lista de Objetos 1?", "Cual es la lista de Objetos 1?"
+        ],
+        "value": 220,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Bases de Datos",
+        "patterns": [
+          "¿Cuál es la lista de Bases de Datos?", "Cuál es la lista de Bases de Datos?", "Cual es la lista de Bases de Datos?",
+          "¿Dónde puedo mandar mail por Bases de Datos?","Dónde puedo mandar mail por Bases de Datos?", "¿Donde puedo mandar mail por Bases de Datos?", "Donde puedo mandar mail por Bases de Datos?",
+          "Necesito información sobre Bases de Datos"
+        ],
+        "value": 27,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Estructuras de Datos",
+        "patterns": [
+          "¿Cuál es la lista de Estructuras de Datos?", "Cuál es la lista de Estructuras de Datos?", "Cual es la lista de Estructuras de Datos?",
+          "¿Dónde puedo mandar mail por Estructuras de Datos?","Dónde puedo mandar mail por Estructuras de Datos?", "¿Donde puedo mandar mail por Estructuras de Datos?", "Donde puedo mandar mail por Estructuras de Datos?",
+          "Necesito información sobre Estructuras de Datos", "¿Cuál es la lista de Estructuras?", "Cuál es la lista de Estructuras?", "Cual es la lista de Estructuras?",
+          "¿Dónde puedo mandar mail por Estructuras?","Dónde puedo mandar mail por Estructuras?", "¿Donde puedo mandar mail por Estructuras?", "Donde puedo mandar mail por Estructuras?",
+          "Necesito información sobre Estructuras"
+        ],
+        "value": 106,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Programación con Objetos II",
+        "patterns": [
+          "¿Cuál es la lista de Programación con Objetos II?", "Cuál es la lista de Programación con Objetos II?", "Cual es la lista de Programacion con Objetos II?",
+          "¿Dónde puedo mandar mail por Programación con Objetos II?","Dónde puedo mandar mail por Programación con Objetos II?", "¿Donde puedo mandar mail por Programacion con Objetos II?", "Donde puedo mandar mail por Programacion con Objetos II?",
+          "Necesito información sobre Programación con Objetos II", "¿Cuál es la lista de Programación con Objetos 2?", "Cuál es la lista de Programación con Objetos 2?", "Cual es la lista de Programacion con Objetos 2?",
+          "¿Dónde puedo mandar mail por Programación con Objetos 2?","Dónde puedo mandar mail por Programación con Objetos 2?", "¿Donde puedo mandar mail por Programacion con Objetos 2?", "Donde puedo mandar mail por Programacion con Objetos 2?",
+          "Necesito información sobre Programación con Objetos 2", "¿Cuál es la lista de Objetos 2?", "Cuál es la lista de Objetos 2?", "Cual es la lista de Objetos 2?",
+          "¿Dónde puedo mandar mail por Objetos 2?","Dónde puedo mandar mail por Objetos 2?", "¿Donde puedo mandar mail por Objetos 2?", "Donde puedo mandar mail por Objetos 2?",
+          "Necesito información sobre Objetos 2", "¿Cuál es la lista de Objetos 2?", "Cuál es la lista de Objetos 2?", "Cual es la lista de Objetos 2?"
+        ],
+        "value": 221,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Redes de Computadoras",
+        "patterns": [
+          "¿Cuál es la lista de Redes de Computadoras?", "Cuál es la lista de Redes de Computadoras?", "Cual es la lista de Redes de Computadoras?",
+          "¿Dónde puedo mandar mail por Redes de Computadoras?","Dónde puedo mandar mail por Redes de Computadoras?", "¿Donde puedo mandar mail por Redes de Computadoras?", "Donde puedo mandar mail por Redes de Computadoras?",
+          "Necesito información sobre Redes de Computadoras", "¿Cuál es la lista de Redes?", "Cuál es la lista de Redes?", "Cual es la lista de Redes?",
+          "¿Dónde puedo mandar mail por Redes?","Dónde puedo mandar mail por Redes?", "¿Donde puedo mandar mail por Redes?", "Donde puedo mandar mail por Redes?",
+          "Necesito informacion sobre Redes"
+        ],
+        "value": 237,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Sistemas Operativos",
+        "patterns": [
+          "¿Cuál es la lista de Sistemas Operativos?", "Cuál es la lista de Sistemas Operativos?", "Cual es la lista de Sistemas Operativos?",
+          "¿Dónde puedo mandar mail por Sistemas Operativos?","Dónde puedo mandar mail por Sistemas Operativos?", "¿Donde puedo mandar mail por Sistemas Operativos?", "Donde puedo mandar mail por Sistemas Operativos?",
+          "Necesito información sobre Sistemas Operativos", "¿Cuál es la lista de Operativos?", "Cuál es la lista de Operativos?", "Cual es la lista de Operativos?",
+          "¿Dónde puedo mandar mail por Operativos?","Dónde puedo mandar mail por Operativos?", "¿Donde puedo mandar mail por Operativos?", "Donde puedo mandar mail por Operativos?",
+          "Necesito informacion sobre Operativos"
+        ],
+        "value": 259,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Programación Concurrente",
+        "patterns": [
+          "¿Cuál es la lista de Programación Concurrente?", "Cuál es la lista de Programación Concurrente?", "Cual es la lista de Programacion Concurrente?",
+          "¿Dónde puedo mandar mail por Programación Concurrente?","Dónde puedo mandar mail por Programación Concurrente?", "¿Donde puedo mandar mail por Programacion Concurrente?", "Donde puedo mandar mail por Programacion Concurrente?",
+          "Necesito información sobre Programación Concurrente", "¿Cuál es la lista de Concurrente?", "Cuál es la lista de Concurrente?", "Cual es la lista de Concurrente?",
+          "¿Dónde puedo mandar mail por Concurrente?","Dónde puedo mandar mail por Concurrente?", "¿Donde puedo mandar mail por Concurrente?", "Donde puedo mandar mail por Concurrente?",
+          "Necesito información sobre Concurrente", "¿Cuál es la lista de Concurrente?", "Cuál es la lista de Concurrente?", "Cual es la lista de Concurrente?"
+        ],
+        "value": 223,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Matemática II",
+        "patterns": [
+          "¿Cuál es la lista de Matemática II?", "Cuál es la lista de Matemática II?", "Cual es la lista de Matematica II?",
+          "¿Dónde puedo mandar mail por Matemática II?","Dónde puedo mandar mail por Matemática II?", "¿Donde puedo mandar mail por Matematica II?", "Donde puedo mandar mail por Matematica II?",
+          "Necesito información sobre Matematica II", "¿Cuál es la lista de Matemática 2?", "Cuál es la lista de Matemática 2?", "Cual es la lista de Matematica 2?",
+          "¿Dónde puedo mandar mail por Matemática 2?","Dónde puedo mandar mail por Matemática 2?", "¿Donde puedo mandar mail por Matematica 2?", "Donde puedo mandar mail por Matematica 2?",
+          "Necesito información sobre Matematica 2", "¿Cuál es la lista de Mate 2?", "Cuál es la lista de Mate 2?", "Cual es la lista de Mate 2?",
+          "¿Dónde puedo mandar mail por Mate 2?","Dónde puedo mandar mail por Mate 2?", "¿Donde puedo mandar mail por Mate 2?", "Donde puedo mandar mail por Mate 2?",
+          "Necesito información sobre Mate 2"
+        ],
+        "value": 186,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Elementos de Ingeniería de Software",
+        "patterns": [
+          "¿Cuál es la lista de Elementos de Ingeniería de Software?", "Cuál es la lista de Elementos de Ingeniería de Software?", "Cual es la lista de Elementos de Ingenieria de Software?",
+          "¿Dónde puedo mandar mail por Elementos de Ingeniería de Software?","Dónde puedo mandar mail por Elementos de Ingeniería de Software?", "¿Donde puedo mandar mail por Elementos de Ingenieria de Software?", "Donde puedo mandar mail por Elementos de Ingenieria de Software?",
+          "Necesito información sobre Elementos de Ingeniería de Software", "¿Cuál es la lista de Elementos?", "Cuál es la lista de Elementos?", "Cual es la lista de Elementos?",
+          "¿Dónde puedo mandar mail por Elementos?","Dónde puedo mandar mail por Elementos?", "¿Donde puedo mandar mail por Elementos?", "Donde puedo mandar mail por Elementos?",
+          "Necesito información sobre Elementos", "¿Cuál es la lista de Elementos?", "Cuál es la lista de Elementos?", "Cual es la lista de Elementos?"
+        ],
+        "value": 95,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Construcción de Interfaces de Usuario",
+        "patterns": [
+          "¿Cuál es la lista de Construcción de Interfaces de Usuario?", "Cuál es la lista de Construcción de Interfaces de Usuario?", "Cual es la lista de Construccion de Interfaces de Usuario?",
+          "¿Dónde puedo mandar mail por Construcción de Interfaces de Usuario?","Dónde puedo mandar mail por Construcción de Interfaces de Usuario?", "¿Donde puedo mandar mail por Construccion de Interfaces de Usuario?", "Donde puedo mandar mail por Construccion de Interfaces de Usuario?",
+          "Necesito información sobre Construcción de Interfaces de Usuario", "¿Cuál es la lista de Interfaces?", "Cuál es la lista de Interfaces?", "Cual es la lista de Interfaces?",
+          "¿Dónde puedo mandar mail por Interfaces?","Dónde puedo mandar mail por Interfaces?", "¿Donde puedo mandar mail por Interfaces?", "Donde puedo mandar mail por Interfaces?",
+          "Necesito información sobre Interfaces", "¿Cuál es la lista de Interfaces?", "Cuál es la lista de Interfaces?", "Cual es la lista de Interfaces?"
+        ],
+        "value": 63,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Estrategias de Persistencia",
+        "patterns": [
+          "¿Cuál es la lista de Estrategias de Persistencia?", "Cuál es la lista de Estrategias de Persistencia?", "Cual es la lista de Estrategias de Persistencia?",
+          "¿Dónde puedo mandar mail por Estrategias de Persistencia?","Dónde puedo mandar mail por Estrategias de Persistencia?", "¿Donde puedo mandar mail por Estrategias de Persistencia?", "Donde puedo mandar mail por Estrategias de Persistencia?",
+          "Necesito información sobre Estrategias de Persistencia", "¿Cuál es la lista de Persistencia?", "Cuál es la lista de Persistencia?", "Cual es la lista de Persistencia?",
+          "¿Dónde puedo mandar mail por Persistencia?","Dónde puedo mandar mail por Persistencia?", "¿Donde puedo mandar mail por Persistencia?", "Donde puedo mandar mail por Persistencia?",
+          "Necesito informacion sobre Persistencia"
+        ],
+        "value": 105,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Programación Funcional",
+        "patterns": [
+          "¿Cuál es la lista de Programación Funcional?", "Cuál es la lista de Programación Funcional?", "Cual es la lista de Programacion Funcional?",
+          "¿Dónde puedo mandar mail por Programación Funcional?","Dónde puedo mandar mail por Programación Funcional?", "¿Donde puedo mandar mail por Programacion Funcional?", "Donde puedo mandar mail por Programacion Funcional?",
+          "Necesito información sobre Programación Funcional", "¿Cuál es la lista de Funcional?", "Cuál es la lista de Funcional?", "Cual es la lista de Funcional?",
+          "¿Dónde puedo mandar mail por Funcional?","Dónde puedo mandar mail por Funcional?", "¿Donde puedo mandar mail por Funcional?", "Donde puedo mandar mail por Funcional?",
+          "Necesito información sobre Funcional", "¿Cuál es la lista de Funcional?", "Cuál es la lista de Funcional?", "Cual es la lista de Funcional?"
+        ],
+        "value": 224,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Desarrollo de Aplicaciones",
+        "patterns": [
+          "¿Cuál es la lista de Desarrollo de Aplicaciones?", "Cuál es la lista de Desarrollo de Aplicaciones?", "Cual es la lista de Desarrollo de Aplicaciones?",
+          "¿Dónde puedo mandar mail por Desarrollo de Aplicaciones?","Dónde puedo mandar mail por Desarrollo de Aplicaciones?", "¿Donde puedo mandar mail por Desarrollo de Aplicaciones?", "Donde puedo mandar mail por Desarrollo de Aplicaciones?",
+          "Necesito información sobre Desarrollo de Aplicaciones", "¿Cuál es la lista de Desarrollo?", "Cuál es la lista de Desarrollo?", "Cual es la lista de Desarollo?",
+          "¿Dónde puedo mandar mail por Desarrollo?","Dónde puedo mandar mail por Desarrollo?", "¿Donde puedo mandar mail por Desarrollo?", "Donde puedo mandar mail por Desarrollo?",
+          "Necesito informacion sobre Desarrollo"
+        ],
+        "value": 74,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Laboratorio de Sistemas Operativos y Redes",
+        "patterns": [
+          "¿Cuál es la lista de Laboratorio de Sistemas Operativos y Redes?", "Cuál es la lista de Laboratorio de Sistemas Operativos y Redes?", "Cual es la lista de Laboratorio de Sistemas Operativos y Redes?",
+          "¿Dónde puedo mandar mail por Laboratorio de Sistemas Operativos y Redes?","Dónde puedo mandar mail por Laboratorio de Sistemas Operativos y Redes?", "¿Donde puedo mandar mail por Laboratorio de Sistemas Operativos y Redes?", "Donde puedo mandar mail por Laboratorio de Sistemas Operativos y Redes?",
+          "Necesito información sobre Laboratorio de Sistemas Operativos y Redes", "¿Cuál es la lista de LABO?", "Cuál es la lista de LABO?", "Cual es la lista de LABO?",
+          "¿Dónde puedo mandar mail por LABO?","Dónde puedo mandar mail por LABO?", "¿Donde puedo mandar mail por LABO?", "Donde puedo mandar mail por LABO?",
+          "Necesito informacion sobre LABO"
+        ],
+        "value": 176,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Programación con Objetos III",
+        "patterns": [
+          "¿Cuál es la lista de Programación con Objetos III?", "Cuál es la lista de Programación con Objetos III?", "Cual es la lista de Programacion con Objetos III?",
+          "¿Dónde puedo mandar mail por Programación con Objetos III?","Dónde puedo mandar mail por Programación con Objetos III?", "¿Donde puedo mandar mail por Programacion con Objetos III?", "Donde puedo mandar mail por Programacion con Objetos III?",
+          "Necesito información sobre Programación con Objetos III", "¿Cuál es la lista de Programación con Objetos 3?", "Cuál es la lista de Programación con Objetos 3?", "Cual es la lista de Programacion con Objetos 3?",
+          "¿Dónde puedo mandar mail por Programación con Objetos 3?","Dónde puedo mandar mail por Programación con Objetos 3?", "¿Donde puedo mandar mail por Programacion con Objetos 3?", "Donde puedo mandar mail por Programacion con Objetos 3?",
+          "Necesito información sobre Programación con Objetos 3", "¿Cuál es la lista de Objetos 3?", "Cuál es la lista de Objetos 3?", "Cual es la lista de Objetos 3?",
+          "¿Dónde puedo mandar mail por Objetos 3?","Dónde puedo mandar mail por Objetos 3?", "¿Donde puedo mandar mail por Objetos 3?", "Donde puedo mandar mail por Objetos 3?",
+          "Necesito información sobre Objetos 3", "¿Cuál es la lista de Objetos 3?", "Cuál es la lista de Objetos 3?", "Cual es la lista de Objetos 3?"
+        ],
+        "value": 222,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Introducción a la Bioinformática",
+        "patterns": [
+          "¿Cuál es la lista de Introducción a la Bioinformática?", "Cuál es la lista de Introducción a la Bioinformática?", "Cual es la lista de Introduccion a la Bioinformatica?",
+          "¿Dónde puedo mandar mail por Introducción a la Bioinformática?","Dónde puedo mandar mail por Introducción a la Bioinformática?", "¿Donde puedo mandar mail por Introduccion a la Bioinformatica?", "Donde puedo mandar mail por Introduccion a la Bioinformatica?",
+          "Necesito información sobre Introducción a la Bioinformática", "¿Cuál es la lista de Bioinformática?", "Cuál es la lista de Bioinformática?", "Cual es la lista de Bioinformática?",
+          "¿Dónde puedo mandar mail por Bioinformática?","Dónde puedo mandar mail por Bioinformática?", "¿Donde puedo mandar mail por Bioinformática?", "Donde puedo mandar mail por Bioinformática?",
+          "Necesito información sobre Bioinformática", "¿Cuál es la lista de Bioinformatica?", "Cuál es la lista de Bioinformatica?", "Cual es la lista de Bioinformatica?"
+        ],
+        "value": 159,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Introducción al Desarrollo de Videojuegos",
+        "patterns": [
+          "¿Cuál es la lista de Introducción al Desarrollo de Videojuegos?", "Cuál es la lista de Introducción al Desarrollo de Videojuegos?", "Cual es la lista de Introduccion al Desarrollo de Videojuegos?",
+          "¿Dónde puedo mandar mail por Introducción al Desarrollo de Videojuegos?","Dónde puedo mandar mail por Introducción al Desarrollo de Videojuegos?", "¿Donde puedo mandar mail por Introduccion al Desarrollo de Videojuegos?", "Donde puedo mandar mail por Introduccion al Desarrollo de Videojuegos?",
+          "Necesito información sobre Introducción al Desarrollo de Videojuegos", "¿Cuál es la lista de Videojuegos?", "Cuál es la lista de Videojuegos?", "Cual es la lista de Videojuegos?",
+          "¿Dónde puedo mandar mail por Videojuegos?","Dónde puedo mandar mail por Videojuegos?", "¿Donde puedo mandar mail por Videojuegos?", "Donde puedo mandar mail por Videojuegos?",
+          "Necesito información sobre Videojuegos", "¿Cuál es la lista de Videojuegos?", "Cuál es la lista de Videojuegos?", "Cual es la lista de Videojuegos?"
+        ],
+        "value": 169,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Seminario de Arduino",
+        "patterns": [
+          "¿Cuál es la lista del Seminario de Arduino?", "Cuál es la lista del Seminario de Arduino", "Cual es la lista del Seminario de Arduino?",
+          "¿Dónde puedo mandar mail por el Seminario de Arduino?","Dónde puedo mandar mail por el Seminario de Arduino?", "¿Donde puedo mandar mail por el Seminario de Arduino?", "Donde puedo mandar mail por el Seminario de Arduino?",
+          "Necesito información sobre el Seminario de Arduino", "¿Cuál es la lista de Arduino?", "Cuál es la lista de Arduino?", "Cual es la lista de Arduino?",
+          "¿Dónde puedo mandar mail por Arduino?","Dónde puedo mandar mail por Arduino?", "¿Donde puedo mandar mail por Arduino?", "Donde puedo mandar mail por Arduino?",
+          "Necesito informacion sobre Arduino"
+        ],
+        "value": 249,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Trabajo de Inserción Profesional",
+        "patterns": [
+          "¿Cuál es la lista del Trabajo de Inserción Profesional?", "Cuál es la lista del Trabajo de Inserción Profesional?", "Cual es la lista del Trabajo de Insercion Profesional?",
+          "¿Dónde puedo mandar mail por el Trabajo de Inserción Profesional?","Dónde puedo mandar mail por el Trabajo de Inserción Profesional?", "¿Donde puedo mandar mail por el Trabajo de Insercion Profesional?", "Donde puedo mandar mail por el Trabajo de Inserción Profesional?",
+          "Necesito información sobre el Trabajo de Inserción Profesional", "¿Cuál es la lista del TIP?", "Cuál es la lista del TIP", "Cual es la lista del TIP?",
+          "¿Dónde puedo mandar mail por el TIP?","Dónde puedo mandar mail por el TIP?", "¿Donde puedo mandar mail por el TIP?", "Donde puedo mandar mail por el TIP?",
+          "Necesito información sobre el TIP", "¿Cuál es la lista del TIP?", "Cuál es la lista del TIP?", "Cual es la lista del TIP?"
+        ],
+        "value": 284,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Lógica y Programación",
+        "patterns": [
+          "¿Cuál es la lista de Lógica y Programación?", "Cuál es la lista de Lógica y Programación?", "Cual es la lista de Logica y Programacion?",
+          "¿Dónde puedo mandar mail por Lógica y Programación?","Dónde puedo mandar mail por Lógica y Programación?", "¿Donde puedo mandar mail por Logica y Programacion?", "Donde puedo mandar mail por Lógica y Programación?",
+          "Necesito información sobre Lógica y Programación", "¿Cuál es la lista de Lógica?", "Cuál es la lista de Lógica", "Cual es la lista de Logica",
+          "¿Dónde puedo mandar mail por Lógica?","Dónde puedo mandar mail por Lógica?", "¿Donde puedo mandar mail por Logica?", "Donde puedo mandar mail por Logica?",
+          "Necesito información sobre Lógica", "¿Cuál es la lista de Logica?", "Cuál es la lista de Lógica?", "Cual es la lista de Logica?"
+        ],
+        "value": 180,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Lenguajes Formales y Autómatas",
+        "patterns": [
+          "¿Cuál es la lista de Lenguajes Formales y Autómatas?", "Cuál es la lista de Lenguajes Formales y Autómatas?", "Cual es la lista de Lenguajes Formales y Automatas?",
+          "¿Dónde puedo mandar mail por Lenguajes Formales y Autómatas?","Dónde puedo mandar mail por Lenguajes Formales y Autómatas?", "¿Donde puedo mandar mail por Lenguajes Formales y Automatas?", "Donde puedo mandar mail por Lenguajes Formales y Autómatas?",
+          "Necesito información sobre Lenguajes Formales y Autómatas", "¿Cuál es la lista de Lenguajes?", "Cuál es la lista de Lenguajes", "Cual es la lista de Lenguajes",
+          "¿Dónde puedo mandar mail por Lenguajes?","Dónde puedo mandar mail por Lenguajes?", "¿Donde puedo mandar mail por Lenguajes?", "Donde puedo mandar mail por Lenguajes?",
+          "Necesito información sobre Lenguajes", "¿Cuál es la lista de Lenguajes?", "Cuál es la lista de Lenguajes?", "Cual es la lista de Lenguajes?"
+        ],
+        "value": 179,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Seguridad de la Información",
+        "patterns": [
+          "¿Cuál es la lista de Seguridad de la Información?", "Cuál es la lista de Seguridad de la Información?", "Cual es la lista de Seguridad de la Informacion?",
+          "¿Dónde puedo mandar mail por Seguridad de la Información?","Dónde puedo mandar mail por Seguridad de la Información?", "¿Donde puedo mandar mail por Seguridad de la Informacion?", "Donde puedo mandar mail por Seguridad de la Información?",
+          "Necesito información sobre Seguridad de la Información", "¿Cuál es la lista de SegInf?", "Cuál es la lista de SegInf", "Cual es la lista de SegInf",
+          "¿Dónde puedo mandar mail por SegInf?","Dónde puedo mandar mail por SegInf?", "¿Donde puedo mandar mail por SegInf?", "Donde puedo mandar mail por SegInf?",
+          "Necesito información sobre SegInf", "¿Cuál es la lista de SegInf?", "Cuál es la lista de SegInf?", "Cual es la lista de SegInf?"
+        ],
+        "value": 242,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Inglés I",
+        "patterns": [
+          "¿Cuál es la lista de Inglés I?", "Cuál es la lista de Inglés I?", "Cual es la lista de Ingles I?",
+          "¿Dónde puedo mandar mail por Inglés I?","Dónde puedo mandar mail por Inglés I?", "¿Donde puedo mandar mail por Ingles I?", "Donde puedo mandar mail por Ingles I?",
+          "Necesito información sobre Ingles I", "¿Cuál es la lista de Inglés 1", "Cuál es la lista de Inglés 1?", "Cual es la lista de Ingles 1?",
+          "¿Dónde puedo mandar mail por Inglés 1?","Dónde puedo mandar mail por Inglés 1?", "¿Donde puedo mandar mail por Ingles 1?", "Donde puedo mandar mail por Ingles 1?",
+          "Necesito información sobre Ingles 1"
+        ],
+        "value": 152,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Inglés II",
+        "patterns": [
+          "¿Cuál es la lista de Inglés II?", "Cuál es la lista de Inglés II?", "Cual es la lista de Ingles II?",
+          "¿Dónde puedo mandar mail por Inglés II?","Dónde puedo mandar mail por Inglés II?", "¿Donde puedo mandar mail por Ingles II?", "Donde puedo mandar mail por Ingles II?",
+          "Necesito información sobre Ingles II", "¿Cuál es la lista de Inglés 2", "Cuál es la lista de Inglés 2?", "Cual es la lista de Ingles 2?",
+          "¿Dónde puedo mandar mail por Inglés 2?","Dónde puedo mandar mail por Inglés 2?", "¿Donde puedo mandar mail por Ingles 2?", "Donde puedo mandar mail por Ingles 2?",
+          "Necesito información sobre Ingles 2"
+        ],
+        "value": 153,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Sistemas Distribuídos",
+        "patterns": [
+          "¿Cuál es la lista de Sistemas Distribuídos?", "Cuál es la lista de Sistemas Distribuídos?", "Cual es la lista de Sistemas Distribuidos?",
+          "¿Dónde puedo mandar mail por Sistemas Distribuídos?","Dónde puedo mandar mail por Sistemas Distribuídos?", "¿Donde puedo mandar mail por Sistemas Distribuidos?",
+          "Necesito información sobre Sistemas Distribuídos", "¿Cuál es la lista de Distribuídos?", "Cuál es la lista de Distribuídos", "Cual es la lista de Distribuidos",
+          "¿Dónde puedo mandar mail por Distribuídos?","Dónde puedo mandar mail por Distribuídos?", "¿Donde puedo mandar mail por Distribuidos?", "Donde puedo mandar mail por Distribuidos?",
+          "Necesito información sobre Distribuídos", "¿Cuál es la lista de Distribuídos?", "Cuál es la lista de Distribuídos?", "Cual es la lista de Distribuidos?"
+        ],
+        "value": 256,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Matemática III",
+        "patterns": [
+          "¿Cuál es la lista de Matemática III?", "Cuál es la lista de Matemática III?", "Cual es la lista de Matematica III?",
+          "¿Dónde puedo mandar mail por Matemática III?","Dónde puedo mandar mail por Matemática III?", "¿Donde puedo mandar mail por Matematica III?", "Donde puedo mandar mail por Matematica III?",
+          "Necesito información sobre Matematica III", "¿Cuál es la lista de Matemática 3?", "Cuál es la lista de Matemática 3?", "Cual es la lista de Matematica 3?",
+          "¿Dónde puedo mandar mail por Matemática 3?","Dónde puedo mandar mail por Matemática 3?", "¿Donde puedo mandar mail por Matematica 3?", "Donde puedo mandar mail por Matematica 3?",
+          "Necesito información sobre Matematica 3", "¿Cuál es la lista de Mate 3?", "Cuál es la lista de Mate 3?", "Cual es la lista de Mate 3?",
+          "¿Dónde puedo mandar mail por Mate 3?","Dónde puedo mandar mail por Mate 3?", "¿Donde puedo mandar mail por Mate 3?", "Donde puedo mandar mail por Mate 3?",
+          "Necesito información sobre Mate 3"
+        ],
+        "value": 187,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Gestión de Proyectos de Software",
+        "patterns": [
+          "¿Cuál es la lista de Gestión de Proyectos de Software?", "Cuál es la lista de Gestión de Proyectos de Software?", "Cual es la lista de Gestion de Proyectos de Software?",
+          "¿Dónde puedo mandar mail por Gestión de Proyectos de Software?","Dónde puedo mandar mail por Gestión de Proyectos de Software?", "¿Donde puedo mandar mail por Gestión de Proyectos de Software?", "Donde puedo mandar mail por Gestion de Proyectos de Software?",
+          "Necesito información sobre Gestión de Proyectos de Software", "¿Cuál es la lista de Proyectos?", "Cuál es la lista de Proyectos", "Cual es la lista de Proyectos",
+          "¿Dónde puedo mandar mail por Proyectos?","Dónde puedo mandar mail por Proyectos?", "¿Donde puedo mandar mail por Proyectos?", "Donde puedo mandar mail por Proyectos?",
+          "Necesito información sobre Proyectos", "¿Cuál es la lista de Proyectos?", "Cuál es la lista de Proyectos?", "Cual es la lista de Proyectos?"
+        ],
+        "value": 139,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Práctica del Desarrollo de Software",
+        "patterns": [
+          "¿Cuál es la lista de Práctica del Desarrollo de Software?", "Cuál es la lista de Práctica del Desarrollo de Software?", "Cual es la lista de Practica del Desarrollo de Software?",
+          "¿Dónde puedo mandar mail por Práctica del Desarrollo de Software?","Dónde puedo mandar mail por Práctica del Desarrollo de Software?", "¿Donde puedo mandar mail por Practica del Desarrollo de Software?", "Donde puedo mandar mail por Practica del Desarrollo de Software?",
+          "Necesito información sobre Práctica del Desarrollo de Software"
+        ],
+        "value": 211,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Algoritmos",
+        "patterns": [
+          "¿Cuál es la lista de Algoritmos?", "Cuál es la lista de Algoritmos?", "Cual es la lista de Algoritmos?",
+          "¿Dónde puedo mandar mail por Algoritmos?","Dónde puedo mandar mail por Algoritmos?", "¿Donde puedo mandar mail por Algoritmos?", "Donde puedo mandar mail por Algoritmos?",
+          "Necesito información sobre Algoritmos"
+        ],
+        "value": 6,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Teoría de la Computación",
+        "patterns": [
+          "¿Cuál es la lista de Teoría de la Computación?", "Cuál es la lista de Teoría de la Computación?", "Cual es la lista de Teoria de la Computacion?",
+          "¿Dónde puedo mandar mail por Teoría de la Computación?","Dónde puedo mandar mail por Teoría de la Computación?", "¿Donde puedo mandar mail por Teoria de la Computacion?", "Donde puedo mandar mail por Teoria de la Computacion?",
+          "Necesito información sobre Teoría de la Computación"
+        ],
+        "value": 278,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Aspectos Legales y Sociales",
+        "patterns": [
+          "¿Cuál es la lista de Aspectos Legales y Sociales?", "Cuál es la lista de Aspectos Legales y Sociales", "Cual es la lista de Aspectos Legales y Sociales?",
+          "¿Dónde puedo mandar mail por Aspectos Legales y Sociales?","Dónde puedo mandar mail por Aspectos Legales y Sociales?", "¿Donde puedo mandar mail por Aspectos Legales y Sociales?", "Donde puedo mandar mail por Aspectos Legales y Sociales?",
+          "Necesito información sobre Aspectos Legales y Sociales", "¿Cuál es la lista de Aspectos?", "Cuál es la lista de Aspectos?", "Cual es la lista de Aspectos?",
+          "¿Dónde puedo mandar mail por Aspectos?","Dónde puedo mandar mail por Aspectos?", "¿Donde puedo mandar mail por Aspectos?", "Donde puedo mandar mail por Aspectos?",
+          "Necesito informacion sobre Aspectos"
+        ],
+        "value": 290,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Taller de Trabajo Universitario",
+        "patterns": [
+          "¿Cuál es la lista del Taller de Trabajo Universitario?", "Cuál es la lista del Taller de Trabajo Universitario", "Cual es la lista del Taller de Trabajo Universitario?",
+          "¿Dónde puedo mandar mail por el Taller de Trabajo Universitario?","Dónde puedo mandar mail por el Taller de Trabajo Universitario?", "¿Donde puedo mandar mail por el Taller de Trabajo Universitario?", "Donde puedo mandar mail por el Taller de Trabajo Universitario?",
+          "Necesito información sobre el Taller de Trabajo Universitario", "¿Cuál es la lista del TTU?", "Cuál es la lista del TTU?", "Cual es la lista del TTU?",
+          "¿Dónde puedo mandar mail por el TTU?","Dónde puedo mandar mail por el TTU?", "¿Donde puedo mandar mail por el TTU?", "Donde puedo mandar mail por el TTU?",
+          "Necesito informacion sobre el TTU"
+        ],
+        "value": 266,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Taller de Trabajo Intelectual",
+        "patterns": [
+          "¿Cuál es la lista del Taller de Trabajo Intelectual?", "Cuál es la lista del Taller de Trabajo Intelectual", "Cual es la lista del Taller de Trabajo Intelectual?",
+          "¿Dónde puedo mandar mail por el Taller de Trabajo Intelectual?","Dónde puedo mandar mail por el Taller de Trabajo Intelectual?", "¿Donde puedo mandar mail por el Taller de Trabajo Intelectual?", "Donde puedo mandar mail por el Taller de Trabajo Intelectual?",
+          "Necesito información sobre el Taller de Trabajo Intelectual", "¿Cuál es la lista del TTI?", "Cuál es la lista del TTI?", "Cual es la lista del TTI?",
+          "¿Dónde puedo mandar mail por el TTI?","Dónde puedo mandar mail por el TTI?", "¿Donde puedo mandar mail por el TTI?", "Donde puedo mandar mail por el TTI?",
+          "Necesito informacion sobre el TTI"
+        ],
+        "value": 265,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Probabilidad y Estadística",
+        "patterns": [
+          "¿Cuál es la lista de Probabilidad y Estadística?", "Cuál es la lista de Probabilidad y Estadística?", "Cual es la lista de Probabilidad y Estadistica?",
+          "¿Dónde puedo mandar mail por Probabilidad y Estadística?","Dónde puedo mandar mail por Probabilidad y Estadística?", "¿Donde puedo mandar mail por Probabilidad y Estadistica?", "Donde puedo mandar mail por Probabilidad y Estadistica?",
+          "Necesito información sobre Probabilidad y Estadística", "¿Cuál es la lista de Proba?", "Cuál es la lista de Proba", "Cual es la lista de Proba",
+          "¿Dónde puedo mandar mail por Proba?","Dónde puedo mandar mail por Proba?", "¿Donde puedo mandar mail por Proba?", "Donde puedo mandar mail por Proba?",
+          "Necesito información sobre Proba", "¿Cuál es la lista de Proba?", "Cuál es la lista de Proba?", "Cual es la lista de Proba?"
+        ],
+        "value": 214,
+        "responses": [""]
+      },
+      {
+        "tag": "info materia - Análisis Matemático I",
+        "patterns": [
+          "¿Cuál es la lista de Análisis Matemático I?", "Cuál es la lista de Análisis Matemático I?", "Cual es la lista de Analisis Matematico I?",
+          "¿Dónde puedo mandar mail por Análisis Matemático I","Dónde puedo mandar mail por Análisis Matemático I?", "¿Donde puedo mandar mail por Analisis Matematico I?", "Donde puedo mandar mail por Analisis Matematico I?",
+          "Necesito información sobre Análisis Matemático I", "¿Cuál es la lista de Análisis Matemático 1?", "Cuál es la lista de Análisis Matemático 1?", "Cual es la lista de Analisis Matematico 1?",
+          "¿Dónde puedo mandar mail por Análisis Matemático 1?","Dónde puedo mandar mail por Análisis Matemático 1?", "¿Donde puedo mandar mail por Analisis Matematico 1?", "Donde puedo mandar mail por Analisis Matematico 1?",
+          "Necesito información sobre Analisis Matematico 1", "¿Cuál es la lista de Analisis 1?", "Cuál es la lista de Analisis 1?", "Cual es la lista de Analisis 1?",
+          "¿Dónde puedo mandar mail por Analisis 1?","Dónde puedo mandar mail por Analisis 1?", "¿Donde puedo mandar mail por Analisis 1?", "Donde puedo mandar mail por Analisis 1?",
+          "Necesito información sobre Analisis 1"
+        ],
+        "value": 14,
         "responses": [""]
       }
     ]
