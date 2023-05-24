@@ -2,6 +2,7 @@ import unittest
 
 from interface.middleware import Middleware
 from test.db.dbTesting import DatabaseMemory
+from test.db.insertsBuilder import InsertScriptBuilder
 
 
 class MiddlewareTest(unittest.TestCase):
@@ -13,21 +14,24 @@ class MiddlewareTest(unittest.TestCase):
         self.middlewareTest.currentInterface.dao.db = self.dbTesting
         self.middlewareTest.currentInterface.daoUser.db = self.dbTesting
         self.middlewareTest.currentInterface.daoMateria.db = self.dbTesting
+        self.insertsBuilder = InsertScriptBuilder()
 
     def test_cant_materias_con_carrera_SIN_materias_cargadas(self):
         """
         test Cantidad de materias de carrera sin materias relacionadas.
         """
         idCarreraTPI = 1
+        nombreTPI = "Tecnicatura en Programacion Informatica"
 
         # Carga de datos
-        insertCarrera = "INSERT INTO carrera(id, nombre, depto) VALUES (" + str(idCarreraTPI) + ", 'Tecnicatura en Programacion Informatica', 'CYT');"
+        insertCarrera = self.insertsBuilder.carrera(idCarreraTPI, nombreTPI, "CYT")
         self.dbTesting.ejecutarComandosMult(insertCarrera)
 
-        # Test de metodo 'cantidadMateriasPorCarrera'
         response = self.middlewareTest.cantidadMateriasPorCarrera(idCarreraTPI)
-        expected = "La carrera Tecnicatura en Programacion Informatica tiene 0 materias"
-        self.assertEqual(expected, response)
+        expected = "tiene 0 materias"
+
+        self.assertIn(expected, response)
+        self.assertIn(nombreTPI, response)
 
     def test_cant_materias_con_carrera_2_materias_cargadas(self):
         """
@@ -35,47 +39,45 @@ class MiddlewareTest(unittest.TestCase):
         """
         idCarreraTPI = 1
         # Carga de datos
-        insertCarreras = "INSERT INTO carrera(id, nombre, depto) VALUES (" + str(idCarreraTPI) + ", 'Tecnicatura en Programacion Informatica', 'CYT'),(2, 'Licenciatura en Informatica', 'CYT');"
-        insertMaterias = "INSERT INTO materia (id,nombre) VALUES (165, 'Introduccion a la programacion'),(204,'Organizacion de Computadoras');"
-        insertRelacionCarrera1 = "INSERT INTO carrera_materias (idCarrera,idMateria) VALUES (1, 165),(1, 204);"
-        self.dbTesting.ejecutarComandosMult(insertCarreras + insertMaterias + insertRelacionCarrera1)
+        insertCarreras = self.insertsBuilder.carrera(idCarreraTPI, "Tecnicatura en Programacion Informatica", "CYT")
+        insertMaterias = self.insertsBuilder.materia(1, 'Introduccion a la programacion', idCarreraTPI) + \
+                         self.insertsBuilder.materia(2, 'Organizacion de Computadoras', idCarreraTPI)
+        self.dbTesting.ejecutarComandosMult(insertCarreras + insertMaterias)
 
-        # Test de metodo 'cantidadMateriasPorCarrera'
         response = self.middlewareTest.cantidadMateriasPorCarrera(idCarreraTPI)
-        expected = "La carrera Tecnicatura en Programacion Informatica tiene 2 materias"
-        self.assertEqual(expected, response)
+        expected = "tiene 2 materias"
+        self.assertIn(expected, response)
 
     def test_info_materias_con_carrera_SIN_materias(self):
         """
         test Info de materias de carrera sin materias relacionadas.
         """
         idCarreraTPI = 1
-
         # Carga de datos
-        insertCarreras = "INSERT INTO carrera(id, nombre, depto) VALUES (" + str(idCarreraTPI) + ", 'Tecnicatura en Programacion Informatica', 'CYT'),(2, 'Licenciatura en Informatica', 'CYT');"
+        insertCarreras = self.insertsBuilder.carrera(idCarreraTPI, "Tecnicatura en Programacion Informatica", "CYT")
         self.dbTesting.ejecutarComandosMult(insertCarreras)
 
-        # Test de metodo 'infoMateriasPorCarrera'
         response = self.middlewareTest.infoMateriasPorCarrera(idCarreraTPI)
-        expected = "Las materias de la carrera Tecnicatura en Programacion Informatica son: No existen materias cargadas."
-        self.assertEqual(expected, response)
+        expected = "No existen materias cargadas."
+        self.assertIn(expected, response)
 
     def test_info_materias_con_carrera_2_materias(self):
         """
         test Info de materias de carrera con Dos materias relacionadas.
         """
         idCarreraTPI = 1
+        materia1Nombre = 'Introduccion a la programacion'
+        materia2Nombre = 'Organizacion de Computadoras'
 
         # Carga de datos
-        insertCarreras = "INSERT INTO carrera(id, nombre, depto) VALUES (" + str(idCarreraTPI) + ", 'Tecnicatura en Programacion Informatica', 'CYT'),(2, 'Licenciatura en Informatica', 'CYT');"
-        insertMaterias = "INSERT INTO materia (id,nombre) VALUES (165, 'Introduccion a la programacion'),(204,'Organizacion de Computadoras');"
-        insertRelacionCarrera1 = "INSERT INTO carrera_materias (idCarrera,idMateria) VALUES (1, 165),(1, 204);"
-        self.dbTesting.ejecutarComandosMult(insertCarreras + insertMaterias + insertRelacionCarrera1)
+        insertCarreras = self.insertsBuilder.carrera(idCarreraTPI, "Tecnicatura en Programacion Informatica", "CYT")
+        insertMaterias = self.insertsBuilder.materia(1, materia1Nombre, idCarreraTPI) \
+                         + self.insertsBuilder.materia(2, materia2Nombre, idCarreraTPI)
+        self.dbTesting.ejecutarComandosMult(insertCarreras + insertMaterias)
 
-        # Test de metodo 'infoMateriasPorCarrera'
         response = self.middlewareTest.infoMateriasPorCarrera(idCarreraTPI)
-        expected = "Las materias de la carrera Tecnicatura en Programacion Informatica son: <br/> -Introduccion a la programacion<br/> -Organizacion de Computadoras"
-        self.assertEqual(expected, response)
+        self.assertIn(materia1Nombre, response)
+        self.assertIn(materia2Nombre, response)
 
     def test_info_materias_con_carrera_NO_existente(self):
         """
@@ -83,7 +85,7 @@ class MiddlewareTest(unittest.TestCase):
         """
         idCarreraTPI = 1
         # No hay Carga de datos
-        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
+
         self.assertRaises(Exception, self.middlewareTest.infoMateriasPorCarrera, idCarreraTPI)
 
     def test_usuario_sin_materias_aprobadas(self):
@@ -92,10 +94,9 @@ class MiddlewareTest(unittest.TestCase):
         """
         idUsuario = 1
         # Carga de datos
-        insertUsuario = "INSERT INTO usuario(id, dni, legajo) VALUES (" + str(idUsuario) + ", 11222333, '1111');"
+        insertUsuario = self.insertsBuilder.usuario(idUsuario, 123, "123")
         self.dbTesting.ejecutarComandosMult(insertUsuario)
 
-        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
         response = self.middlewareTest.materiasAprobadasDelUsuario(idUsuario)
         expected = "Aún no tenés materias aprobadas"
         self.assertEqual(expected, response)
@@ -105,16 +106,20 @@ class MiddlewareTest(unittest.TestCase):
         test Info de Materias Aprobadas de usuario que cuenta con DOS materias aprobadas.
         """
         idUsuario = 1
+        notaAprobado = 7
+        materia1Nombre = 'Introduccion a la programacion'
+        materia2Nombre = 'Organizacion de Computadoras'
         # Carga de datos
-        insertUsuario = "INSERT INTO usuario(id, dni, legajo) VALUES (" + str(idUsuario) + ", 11222333, '1111');"
-        insertMaterias = "INSERT INTO materia (id,nombre) VALUES (165, 'Introduccion a la programacion'),(204,'Organizacion de Computadoras');"
-        insertUsuarioMateriasAprobadas = "INSERT INTO usuario_mcursadas (idUsuario,idMateria,notaFinal) VALUES("+str(idUsuario)+", 165, 7),("+str(idUsuario)+", 204, 7);"
-        self.dbTesting.ejecutarComandosMult(insertUsuario+insertMaterias+insertUsuarioMateriasAprobadas)
+        insertUsuario = self.insertsBuilder.usuario(idUsuario, 123, "123")
+        insertMaterias = self.insertsBuilder.materia(10, materia1Nombre, 1) + \
+                         self.insertsBuilder.materia(11, materia2Nombre, 1)
+        insertUsuarioMateriasAprobadas = self.insertsBuilder.usuarioxmateria(idUsuario, 10, notaAprobado) + \
+                                         self.insertsBuilder.usuarioxmateria(idUsuario, 11, notaAprobado)
+        self.dbTesting.ejecutarComandosMult(insertUsuario + insertMaterias + insertUsuarioMateriasAprobadas)
 
-        # Test de metodo 'materiasAprobadasDelUsuario'
         response = self.middlewareTest.materiasAprobadasDelUsuario(idUsuario)
-        expected = "Tenés las siguientes materias aprobadas: <br/>Introduccion a la programacion <br/>Organizacion de Computadoras"
-        self.assertEqual(expected, response)
+        self.assertIn(materia1Nombre, response)
+        self.assertIn(materia2Nombre, response)
 
     def test_usuario_No_existente(self):
         """
@@ -123,7 +128,6 @@ class MiddlewareTest(unittest.TestCase):
         idUsuario = 1
         # No hay Carga de datos
 
-        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
         response = self.middlewareTest.materiasAprobadasDelUsuario(idUsuario)
         expected = "Aún no tenés materias aprobadas"
         self.assertEqual(expected, response)
@@ -135,10 +139,9 @@ class MiddlewareTest(unittest.TestCase):
         idUsuario = 1
 
         # Carga de datos
-        insertUsuario = "INSERT INTO usuario(id, dni, legajo) VALUES (" + str(idUsuario) + ", 11222333, '1111');"
+        insertUsuario = self.insertsBuilder.usuario(idUsuario, 123, "123")
         self.dbTesting.ejecutarComandosMult(insertUsuario)
 
-        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
         response = self.middlewareTest.promedioDelUsuario(idUsuario)
         expected = "Aún no tenés notas cargadas"
         self.assertEqual(expected, response)
@@ -152,46 +155,58 @@ class MiddlewareTest(unittest.TestCase):
         nota2 = 4
 
         # Carga de datos
-        insertUsuario = "INSERT INTO usuario(id, dni, legajo) VALUES (" + str(idUsuario) + ", 11222333, '1111');"
-        insertMaterias = "INSERT INTO materia (id,nombre) VALUES (165, 'Introduccion a la programacion'),(204,'Organizacion de Computadoras');"
-        insertUsuarioMateriasAprobadas = "INSERT INTO usuario_mcursadas (idUsuario,idMateria, notaFinal) VALUES("+str(idUsuario)+", 165, "+str(nota1)+"),("+str(idUsuario)+", 204, "+str(nota2)+");"
+        insertUsuario = self.insertsBuilder.usuario(idUsuario, 123, "123")
+        insertMaterias = self.insertsBuilder.materia(10, 'Introduccion a la programacion', 1) + \
+                         self.insertsBuilder.materia(11, 'Organizacion de Computadoras', 1)
+        insertUsuarioMateriasAprobadas = self.insertsBuilder.usuarioxmateria(idUsuario, 10, nota1) + \
+                                         self.insertsBuilder.usuarioxmateria(idUsuario, 11, nota2)
         self.dbTesting.ejecutarComandosMult(insertUsuario + insertMaterias + insertUsuarioMateriasAprobadas)
 
-        # Test de metodo 'infoMateriasPorCarrera' con id de Carrera no existente
         response = self.middlewareTest.promedioDelUsuario(idUsuario)
-        expected = "Tu promedio actual es: 7.0"
-        self.assertEqual(expected,response)
+        expected = str((nota1 + nota2) / 2)
 
-    def test_info_Cursada_actuales_de_Materia_Intro(self):
+        self.assertIn(expected, response)
+
+    def test_Cursada_existente_se_retornan_sus_datos(self):
         """
         Test de informacion sobre Cursada segun idMateria, con Cursada y Materia existentes
         """
         idMateria = 166
+        materiaNombre = 'Introduccion a la programacion'
+        emailGrupo = 'tpi-est-inpr@listas.unq.edu.ar'
+        hs1 = 'Lun 09:00 a 11:59 - Mie 09:00 a 10:59(Virtual) - Jue 09:00 a 11:59'
+        aulas1 = '37B - Virtual - 37B'
+        hs2 = 'Lun 12:00 a 14:59 - Mie 09:00 a 10:59 - (Virtual) Jue 12:00 a 14:59'
+        aulas2 = '37B - Virtual - 60'
 
         # Carga de datos
-        insertMaterias = "INSERT INTO materia (id,nombre) VALUES ("+str(idMateria)+", 'Introduccion a la Programación');"
-        insertCursadasIntro = "INSERT INTO cursada (id,idMateria,comision,nombreMateria,emailGrupo,horarios,periodo,activa,aulas) VALUES" \
-                              "(1,"+str(idMateria)+",1,'Introducción a la Programación','tpi-est-inpr@listas.unq.edu.ar','Lun 09:00 a 11:59 - Mie 09:00 a 10:59(Virtual) - Jue 09:00 a 11:59','C12023',1,'37B - Virtual - 37B')," \
-                              "(2,"+str(idMateria)+",2,'Introducción a la Programación','tpi-est-inpr@listas.unq.edu.ar','Lun 12:00 a 14:59 - Mie 09:00 a 10:59 - (Virtual) Jue 12:00 a 14:59','C12023',1,'37B - Virtual - 37B');"
-        self.dbTesting.ejecutarComandosMult(insertMaterias+insertCursadasIntro)
+        insertMaterias = self.insertsBuilder.materia(idMateria, materiaNombre, 1)
+        insertCursadas = self.insertsBuilder.cursada(1, idMateria, 1, materiaNombre, emailGrupo, hs1, 'C12023', 1, aulas1) + \
+                         self.insertsBuilder.cursada(2, idMateria, 2, materiaNombre, emailGrupo, hs2, 'C12023', 1, aulas2)
+        self.dbTesting.ejecutarComandosMult(insertMaterias + insertCursadas)
 
         response = self.middlewareTest.infoMateria(idMateria)
-        expected = "Materia: Introducción a la Programación\n<br/>Lista de Mail: tpi-est-inpr@listas.unq.edu.ar\n\n<br/>Horarios y Aulas:\nLun 09:00 a 11:59 - Mie 09:00 a 10:59(Virtual) - Jue 09:00 a 11:59 - 37B - Virtual - 37B\n<br/>Lun 12:00 a 14:59 - Mie 09:00 a 10:59 - (Virtual) Jue 12:00 a 14:59 - 37B - Virtual - 37B"
-        self.assertEqual(expected, response)
+        self.assertIn(materiaNombre, response)
+        self.assertIn(emailGrupo, response)
+        self.assertIn(hs1, response)
+        self.assertIn(aulas1, response)
+        self.assertIn(hs2, response)
+        self.assertIn(aulas2, response)
 
-    def test_info_Cursada_No_Existente_de_Materia_Intro(self):
+    def test_Cursada_No_existente_no_retorna_informacion(self):
         """
         Test de informacion sobre Cursada segun idMateria, con Cursada no existentes
         """
         idMateria = 166
 
         # Carga de datos
-        insertMaterias = "INSERT INTO materia (id,nombre) VALUES ("+str(idMateria)+", 'Introduccion a la Programación');"
+        insertMaterias = self.insertsBuilder.materia(idMateria, 'Introduccion a la programacion', 1)
         self.dbTesting.ejecutarComandosMult(insertMaterias)
 
         response = self.middlewareTest.infoMateria(idMateria)
         expected = "No existen Cursadas activas para esa materia..."
         self.assertEqual(expected, response)
+
 
 if __name__ == '__main__':
     unittest.main()

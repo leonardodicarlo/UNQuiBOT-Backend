@@ -69,6 +69,7 @@ PRIMARY KEY (`id`)
 DROP TABLE IF EXISTS `materia`;
 CREATE TABLE `materia` (
 `id` int NOT NULL,
+`idCarrera` int NOT NULL,
 `nombre` varchar(255) NOT NULL,
 PRIMARY KEY (`id`)
 );
