@@ -23,3 +23,8 @@ class UsuarioDAO:
             return suma_notas / len(notas)
         else:
             return 0
+
+    def getCarrera(self, idUsuario):
+        sql = 'select idCarrera from usuario_carreras where idUsuario = {idUsr}' \
+            .format(idUsr=idUsuario)
+        return self.db.execute_query(sql)

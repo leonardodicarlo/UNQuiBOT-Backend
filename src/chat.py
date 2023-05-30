@@ -72,16 +72,32 @@ class InfoMateriasHandler(IntentHandler):
 
 class InfoUsuarioHandler(IntentHandler):
     def handle(self, intent, usr):
-        if "info usuario -" in intent["tag"]:
-            if usr == 0:
+        if ("info usuario -" in intent["tag"]) and (usr == 0):
                 return "Aún no estás logueado, no puedo responderte esa información."
-            elif "Materias Cursadas" in intent["tag"]:
-                return interface.materiasAprobadasDelUsuario(usr)
-            elif "Promedio" in intent["tag"]:
-                return interface.promedioDelUsuario(usr)
         elif self.next_handler is not None:
             return self.next_handler.handle(intent, usr)
 
+class InfoUsuarioCursadas(IntentHandler):
+    def handle(self, intent, usr):
+        if "Materias Cursadas" in intent["tag"]:
+            return interface.materiasAprobadasDelUsuario(usr)
+        elif self.next_handler is not None:
+            return self.next_handler.handle(intent, usr)
+
+class InfoUsuarioPromedio(IntentHandler):
+    def handle(self, intent, usr):
+        if "Promedio" in intent["tag"]:
+            return interface.promedioDelUsuario(usr)
+        elif self.next_handler is not None:
+            return self.next_handler.handle(intent, usr)
+
+
+class InfoUsuarioPosibles(IntentHandler):
+    def handle(self, intent, usr):
+        if "Posibles" in intent["tag"]:
+            return interface.posiblesDelUsuario(usr)
+        elif self.next_handler is not None:
+            return self.next_handler.handle(intent, usr)
 
 class DefaultHandler(IntentHandler):
     def handle(self, intent, usr):
@@ -96,7 +112,13 @@ class IntentProcessor:
             CantidadMateriasHandler(
                 InfoMateriasHandler(
                     InfoUsuarioHandler(
-                        DefaultHandler()
+                        InfoUsuarioCursadas(
+                            InfoUsuarioPromedio(
+                                InfoUsuarioPosibles(
+                                    DefaultHandler()
+                                )
+                            )
+                        )
                     )
                 )
             )

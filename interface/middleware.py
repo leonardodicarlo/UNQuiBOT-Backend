@@ -49,3 +49,11 @@ class Middleware:
         else:
             resp = "Aún no tenés notas cargadas"
         return resp
+
+    def posiblesDelUsuario(self, usr):
+        cursables = self.currentInterface.posiblesByUserId(usr)
+        if len(cursables) != 0:
+            resp = "Estás habilitado a cursar las siguientes materias: " + str(cursables)
+        else:
+            resp = "No se encontraron materias a las que puedas anotarte.."
+        return resp

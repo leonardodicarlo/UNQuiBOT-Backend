@@ -22,3 +22,7 @@ class InterfazTemplate:
     def promedioByUserId(self, usr) -> float:
         """ Dado un ID de usuario, retorna el promedio de todas sus notas finales """
         pass
+
+    def posiblesByUserId(self, usr) -> [Materia]:
+        """ Dado un ID de usuario, retorna las posibles materias a las que puede anotarse """
+        pass

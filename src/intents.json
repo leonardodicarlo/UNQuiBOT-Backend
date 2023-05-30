@@ -36,9 +36,9 @@
       {
         "tag": "aulas",
         "patterns": [
-          "¿Dónde quedan las aulas?","¿Donde quedan las aulas?",
-          "¿En qué aula curso?", "¿En que aula curso?",
-          "¿Cómo llego al aula?"
+          "¿Dónde quedan las aulas?","¿Donde quedan las aulas?", "Donde quedan las aulas?",
+          "¿En qué aula curso?", "¿En que aula curso?", "En que aula curso?",
+          "¿Cómo llego al aula?", "Como llego al aula?", "¿Cuál es mi aula?", "Cual es mi aula?"
         ],
         "responses": [
           "Aquí están las aulas para este cuatrimestre: https://docs.google.com/spreadsheets/d/1dfhnJ2AH-tObDMXkmfNHLEfx7FnxGfE9/view#gid=1270991353",
@@ -51,7 +51,7 @@
           "¿Cuando empieza la fecha de inscripciones?", "¿En qué fecha puedo inscribirme?",
           "¿Cuando puedo anotarme?", "¿Ya pasó la fecha de inscripción?", "¿Cuando puedo inscribirme?",
           "Cuando empieza la fecha de inscripciones?", "En que fecha puedo inscribirme?", "Cuando puedo anotarme?",
-          "Ya paso la fecha de inscripcion?", "Cuando puedo inscribirme"
+          "Ya paso la fecha de inscripcion?", "Cuando puedo inscribirme", "¿En qué fecha puedo anotarme?", "En que fecha puedo anotarme?"
         ],
         "responses": [
           "Ya pasó la fecha de inscripción, las inscripciones al C2-2024 comienzan el 01/08/2023.<br/><br/>En esta sección de nuestra web tenés mas información: http://cpi.blog.unq.edu.ar/oferta-academica/"
@@ -326,6 +326,18 @@
           "¿Cuál es mi promedio?", "Cuál es mi promedio?", "¿Cual es mi promedio?",
           "Cual es mi promedio?","¿Qué promedio tengo?", "Qué promedio tengo?", "Que promedio tengo?",
           "¿De cuánto es mi promedio?", "De cuánto es mi promedio?", "¿De cuanto es mi promedio?", "De cuanto es mi promedio?"
+        ],
+        "responses": [""]
+      },
+      {
+        "tag": "info usuario - Materias Posibles",
+        "patterns": [
+          "¿A qué materias puedo anotarme?", "A qué materias puedo anotarme?", "A que materias puedo anotarme?",
+          "¿A qué materias me puedo anotar?","A qué materias me puedo anotar?", "A que materias me puedo anotar?",
+          "¿A qué materias puedo inscribirme?", "A qué materias puedo inscribirme?", "A que materias puedo inscribirme?",
+          "¿A qué materias me puedo inscribir?", "A qué materias me puedo inscribir?", "A que materias me puedo inscribir?",
+          "¿Qué materias puedo cursar?","Qué materias puedo cursar?", "Que materias puedo cursar?",
+          "¿Qué materias podría cursar?","Qué materias podría cursar?", "Que materias podria cursar?"
         ],
         "responses": [""]
       },

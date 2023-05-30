@@ -21,8 +21,6 @@ class CarrerasDAO:
         if materiasRes:
             carrera.materias = self.buildMaterias(list(materiasRes))
 
-        ##self.db.close()
-
         return carrera
 
 
@@ -31,3 +29,8 @@ class CarrerasDAO:
         for dm in dictMaterias:
             materias.append(Materia(dm))
         return materias
+
+    def materiasPorCarrera(self, idCarrera):
+        sql = 'select idMateria from carrera_materias where idCarrera = {idCarrera}' \
+            .format(idCarrera=idCarrera)
+        return self.db.execute_query(sql)
