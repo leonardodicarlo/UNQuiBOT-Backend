@@ -53,7 +53,9 @@ class Middleware:
     def posiblesDelUsuario(self, usr):
         cursables = self.currentInterface.posiblesByUserId(usr)
         if len(cursables) != 0:
-            resp = "Estás habilitado a cursar las siguientes materias: " + str(cursables)
+            resp = "Estás habilitado a cursar las siguientes materias: <br>"
+            for materia in cursables:
+                resp += str(materia) + '<br>'
         else:
             resp = "No se encontraron materias a las que puedas anotarte.."
         return resp

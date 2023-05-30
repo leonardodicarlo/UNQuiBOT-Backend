@@ -41,6 +41,7 @@ class InterfazMySQL(InterfazTemplate):
         carrera = self.daoUser.getCarrera(usr)
         materiasCarrera = self.dao.materiasPorCarrera(carrera[0]['idCarrera'])
         cursables = []
+        respuesta = []
 
         for materia in materiasCarrera:
             if materia['idMateria'] not in idAprobadas:
@@ -49,9 +50,10 @@ class InterfazMySQL(InterfazTemplate):
                 esCursable = all(elemento in idAprobadas for elemento in idCorrelativas)
                 if esCursable:
                     cursables.append(materia)
-        print(cursables)
-        return cursables
 
+        for materia in cursables:
+            nombre = self.daoMateria.getNombreMateriaById(int(materia['idMateria']))
+            respuesta.append(nombre[0])
 
+        return list(map(lambda x: x['nombre'], respuesta))
 
-        return self.daoUser.getMateriasAprobadas(usr)

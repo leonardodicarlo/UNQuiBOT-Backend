@@ -14,3 +14,8 @@ class MateriaDAO:
         sql = 'select * from materias_correlativas where idMateria = {idMateria} and idCarrera = {idCarrera}' \
             .format(idMateria=idMateria, idCarrera=idCarrera)
         return self.db.execute_query(sql)
+
+    def getNombreMateriaById(self, idMateria):
+        sql = 'select * from materia where id = {id}' \
+            .format(id=idMateria)
+        return self.db.execute_query(sql)
