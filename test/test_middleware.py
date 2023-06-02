@@ -207,6 +207,62 @@ class MiddlewareTest(unittest.TestCase):
         expected = "No existen Cursadas activas para esa materia..."
         self.assertEqual(expected, response)
 
+    def test_PosiblesMateriasParaUsuarioSinMateriasAprobadas(self):
+        """
+        Test materias posibles para un usuario sin materias aprobadas no puede inscribirse en materia con correlativa
+        """
+        idUsuario = 1
+        materiaN1 = 'Elementos de programación y lógica'
+        materia_ConCorrelativa = 'Introduccion a la programacion'
+
+        # Carga de datos
+        insertCarreras = self.insertsBuilder.carrera(1, "Tecnicatura en Programacion Informatica", "CYT")
+        insertMaterias = self.insertsBuilder.materia(10, materiaN1, 1) + \
+                         self.insertsBuilder.materia(11, materia_ConCorrelativa, 1, [10])
+
+        insertUsuario = self.insertsBuilder.usuario(idUsuario, 123, "123")
+        insertUsuarioxCarrera = self.insertsBuilder.usuarioxcarrera(idUsuario, 1)
+        self.dbTesting.ejecutarComandosMult(insertUsuario+ insertCarreras+insertMaterias+ insertUsuarioxCarrera)
+
+        response = self.middlewareTest.posiblesDelUsuario(idUsuario)
+        self.assertIn(materiaN1, response)
+        self.assertNotIn(materia_ConCorrelativa, response)
+
+
+    def test_PosiblesMateriasParaUsuario_ConUnaMateriaAprobadas(self):
+        """
+        Test materias posibles para un usuario puede inscribirse en la materia con correlativa aprobada
+        """
+        idUsuario = 1
+        materiaAprobada = 'Elementos de programación y lógica'
+        materia_ConCorrelativa = 'Introduccion a la programacion'
+
+        # Carga de datos
+        insertCarreras = self.insertsBuilder.carrera(1, "Tecnicatura en Programacion Informatica", "CYT")
+        insertMaterias = self.insertsBuilder.materia(10, materiaAprobada, 1) + \
+                         self.insertsBuilder.materia(11, materia_ConCorrelativa, 1, [10])
+
+        insertUsuario = self.insertsBuilder.usuario(idUsuario, 123, "123")
+        insertUsuarioxCarrera = self.insertsBuilder.usuarioxcarrera(idUsuario, 1)
+        insertUsuarioxMateria = self.insertsBuilder.usuarioxmateria(idUsuario, 10,7) # materia aprobada
+        self.dbTesting.ejecutarComandosMult(insertUsuario+ insertCarreras+insertMaterias+ insertUsuarioxCarrera + insertUsuarioxMateria)
+
+        response = self.middlewareTest.posiblesDelUsuario(idUsuario)
+        self.assertIn(materia_ConCorrelativa, response)
+        self.assertNotIn(materiaAprobada, response)
+
+    def test_PosiblesMateriasParaUsuario_NoInscriptoACarrera(self):
+        """
+        Test materias posibles para un usuario puede inscribirse en la materia con correlativa aprobada
+        """
+        idUsuario = 1
+
+        # Carga de datos
+        insertUsuario = self.insertsBuilder.usuario(idUsuario, 123, "123")
+        self.dbTesting.ejecutarComandosMult(insertUsuario)
+
+        response = self.middlewareTest.posiblesDelUsuario(idUsuario)
+        self.assertIn("No se encontraron materias", response)
 
 if __name__ == '__main__':
     unittest.main()
