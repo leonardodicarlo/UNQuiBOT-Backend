@@ -6,3 +6,6 @@ Flask>=2.3.2
 Flask-Cors>=3.0.10
 pymysql
 cryptography
+elasticsearch>=8.8.0
+elastic-transport>=8
+python-logstash>=0.4.8

@@ -2,6 +2,8 @@ import random
 import json
 import torch
 import os
+import logging
+import logstash
 
 # Obtiene la ruta absoluta del directorio que contiene el script
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -36,6 +38,36 @@ model.eval()
 bot_name = "UNQuiBOT"
 interface = Middleware()
 
+class Logging(object):
+    def __init__(self, logger_name='python-logger',
+                 log_stash_host='localhost',
+                 log_stash_upd_port=5959
+
+                 ):
+        self.logger_name = logger_name
+        self.log_stash_host = log_stash_host
+        self.log_stash_upd_port = log_stash_upd_port
+
+
+    def get(self):
+        logging.basicConfig(
+            filename="logfile",
+            filemode="a",
+            format="%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s",
+            datefmt="%H:%M:%S",
+            level=logging.INFO,
+        )
+
+        self.stderrLogger = logging.StreamHandler()
+        logging.getLogger().addHandler(self.stderrLogger)
+        self.logger = logging.getLogger(self.logger_name)
+        self.logger.addHandler(logstash.LogstashHandler(self.log_stash_host,
+                                                        self.log_stash_upd_port,
+                                                        version=1))
+        return self.logger
+
+instance = Logging(log_stash_upd_port=5959, log_stash_host='localhost', logger_name='ChatLog')
+logger = instance.get()
 
 class IntentHandler:
     def __init__(self, next_handler=None):
@@ -143,13 +175,15 @@ def get_response(msg, usr):
 
     if prob.item() > 0.999:
         intent = None
+
         for i in intents['intents']:
             if i["tag"] == tag:
                 intent = i
+                logger.info('python-logstash: test logstash info message:{} '.format(tag))
                 break
         if intent is not None:
             return IntentProcessor().process(intent, usr)
-
+    logger.info('python-logstash: test logstash info message:{} '.format("pregunta sin respuesta"))
     return "No te entendí, todavía estoy aprendiendo..."
 
 if __name__ == "__main__":
