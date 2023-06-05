@@ -39,9 +39,12 @@ class InterfazMySQL(InterfazTemplate):
         aprobadas = self.daoUser.getMateriasAprobadas(usr)
         idAprobadas = list(map(lambda x: x['id'], aprobadas))
         carrera = self.daoUser.getCarrera(usr)
-        materiasCarrera = self.dao.materiasPorCarrera(carrera[0]['idCarrera'])
         cursables = []
         respuesta = []
+        try:
+            materiasCarrera = self.dao.materiasPorCarrera(carrera[0]['idCarrera'])
+        except:
+            materiasCarrera = []
 
         for materia in materiasCarrera:
             if materia['idMateria'] not in idAprobadas:
