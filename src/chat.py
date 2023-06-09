@@ -173,17 +173,26 @@ def get_response(msg, usr):
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
 
+    dict_log = {
+    "tag": tag,
+    "question": msg,
+    "cookieUser": usr
+    }
+
+    json_log = json.dumps(dict_log)
+
     if prob.item() > 0.999:
         intent = None
 
         for i in intents['intents']:
             if i["tag"] == tag:
                 intent = i
-                logger.info('python-logstash: test logstash info message:{} '.format(tag))
+                logger.info(json_log)
                 break
         if intent is not None:
             return IntentProcessor().process(intent, usr)
-    logger.info('python-logstash: test logstash info message:{} '.format("pregunta sin respuesta"))
+    dict_log['tag'] = "pregunta sin respuesta"
+    logger.info(json.dumps(dict_log))
     return "No te entendí, todavía estoy aprendiendo..."
 
 if __name__ == "__main__":
