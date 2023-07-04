@@ -55,3 +55,10 @@ _Hay que asegurarse de que está corriendo el Front de la aplicación, el cual s
 _Esta aplicación generará los request hacia http://127.0.0.1:5000/predict, que es donde está escuchando nuestro backend._
 
 ***
+
+### Links útiles 📄
+
+* [Video Demostración](https://youtu.be/T7heLFdTRuU)
+* [Tablero Trello](https://trello.com/b/zP1UjTij/unquibot)
+
+***
